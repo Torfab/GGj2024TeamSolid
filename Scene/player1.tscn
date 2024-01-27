@@ -7,7 +7,7 @@
 size = Vector2(33, 47)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h6ho7"]
-size = Vector2(33, 26)
+size = Vector2(33, 39)
 
 [sub_resource type="Animation" id="Animation_50vk4"]
 length = 0.001
@@ -261,7 +261,7 @@ hframes = 2
 vframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4.5, 20)
+position = Vector2(-4.5, 13.5)
 shape = SubResource("RectangleShape2D_h6ho7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

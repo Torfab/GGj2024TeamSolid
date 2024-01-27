@@ -63,8 +63,7 @@ func _process(delta):
 		martelloHitWest.disabled = true
 		martelloHitEast.disabled = true
 	if(Input.is_action_pressed("P1_special") && currentWeapon != null):
-		print(currentWeapon)
-		SignalBus.shoot_special.emit(nPlayer, last_direzione, currentWeapon)
+		SignalBus.shoot_special.emit(nPlayer, position, last_direzione, currentWeapon)
 		currentWeapon = null
 		currentWeaponIstance.queue_free()
 		
