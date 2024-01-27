@@ -7,7 +7,13 @@ var armi = {
 }
 var positioni = [[150, 150], [150, 900], [1700, 150], [1700, 900]]
 
+
 func _ready():
+	if(global.giocatori<3):
+		$LabelP3.hide()
+	if(global.giocatori<4):	
+		$LabelP4.hide()
+	
 	SignalBus.connect("shoot_special", _shoot_special)
 	#global.giocatori = 1
 	for i in global.giocatori:
@@ -23,12 +29,18 @@ func _shoot_special(player, posizione, direzione, weapon):
 	istanza.direzione = direzione
 	istanza.shooter = player
 	add_child(istanza) 
-	print("player "+str(player))
-	print("weapon "+str(weapon))
 
 func _process(delta):
 	$LabelP1.text = str(global.punteggio[0])
 	$LabelP2.text = str(global.punteggio[1])
 	$LabelP3.text = str(global.punteggio[2])
 	$LabelP4.text = str(global.punteggio[3])
+	var minuti = "0"+str(floori($Timer2.get_time_left() / 60))
+	var secondi = "0"+str(roundi($Timer2.get_time_left()) % 60)
+	$LabelTimer.text = minuti.right(2)+":"+secondi.right(2)
 	
+
+
+func _on_timer_2_timeout():
+	get_tree().change_scene_to_file("res://Scene/Fine.tscn")
+	pass # Replace with function body.

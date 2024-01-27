@@ -78,7 +78,6 @@ func _physics_process(_delta):
 		last_direzione = direzione
 	update_animation_parameters(direzione)
 	velocity = direzione*velocita #Si deve chiamare velocity
-	
 	move_and_slide()
 
 func update_animation_parameters(direzione :Vector2):
@@ -96,7 +95,6 @@ func setta_stato(direzione :Vector2):
 func setWeapon(weapon):
 	currentWeapon=weapon
 	createWeapon(weapon)
-	print("ho una " + str(weapon))
 
 func createWeapon(weapon):
 	if(currentWeaponIstance!=null):
@@ -105,8 +103,6 @@ func createWeapon(weapon):
 	obj.set("currentWeapon", weapon)
 	add_child(obj)
 	currentWeaponIstance=obj
-	
-	print("sto creando ", weapon)
 
 func _on_area_collision_martello_body_entered(body):
 	if(body.is_in_group("Giocatore")):
