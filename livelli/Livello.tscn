@@ -300,6 +300,7 @@ sources/2 = SubResource("TileSetAtlasSource_faw5c")
 script = ExtResource("1_q4qik")
 
 [node name="TileMap" type="TileMap" parent="."]
+visible = false
 z_index = -10
 tile_set = SubResource("TileSet_g5olh")
 format = 2
