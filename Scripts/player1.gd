@@ -77,6 +77,9 @@ func _physics_process(_delta):
 	if(direzione != Vector2.ZERO):
 		last_direzione = direzione
 	update_animation_parameters(direzione)
+	if(direzione != Vector2.ZERO):
+		direzione = direzione.normalized()
+
 	velocity = direzione*velocita #Si deve chiamare velocity
 	move_and_slide()
 
