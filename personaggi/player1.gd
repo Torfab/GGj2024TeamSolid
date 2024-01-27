@@ -4,11 +4,19 @@ extends CharacterBody2D
 @export var direzioneIniziale = Vector2(0, 1)
 
 @onready var animationTree = $AnimationTree
+@onready var animationMartello = $AnimationMartello
+
+
 @onready var stato = animationTree.get("parameters/playback")
 
 func _ready():
 	update_animation_parameters(direzioneIniziale)
-
+	
+func _process(delta):
+	if Input.is_action_pressed("P1_attacco"):
+		animationMartello.play("attacco_sinistra")
+		
+		
 func _physics_process(_delta):
 	var direzione = Vector2(
 		Input.get_action_strength("P1_destra") - Input.get_action_strength("P1_sinistra"),
