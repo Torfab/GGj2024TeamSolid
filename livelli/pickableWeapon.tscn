@@ -33,7 +33,7 @@ radius = 28.7924
 [node name="PickableWeapon" type="Node2D"]
 script = ExtResource("1_b0wdu")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["Giocatore"]]
 script = ExtResource("2_twoxg")
 
 [node name="SpriteTorta2D" type="Sprite2D" parent="Area2D"]

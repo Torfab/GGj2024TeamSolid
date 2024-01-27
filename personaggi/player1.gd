@@ -9,6 +9,8 @@ var playerSprites = [
 @export var direzioneIniziale = Vector2(0, 1)
 
 var nPlayer;
+var last_direzione;
+
 @export var action_muovi_destra = ""
 @export var action_muovi_sinistra = ""
 @export var action_muovi_su = ""
@@ -16,8 +18,11 @@ var nPlayer;
 @export var action_attacca = ""
 	
 @onready var animationTree = $AnimationTree
-@onready var animationMartello = $AnimationMartello
 @onready var sprite = $Sprite2D
+@onready var martelloHitNorth = $CollisionNorth
+@onready var martelloHitSouth = $CollisionSouth
+@onready var martelloHitWest = $CollisionWest
+@onready var martelloHitEast = $CollisionEast
 
 
 @onready var stato = animationTree.get("parameters/playback")
@@ -29,16 +34,29 @@ func _ready():
 	action_muovi_sinistra = "P"+str(nPlayer)+"_sinistra"
 	action_muovi_su = "P"+str(nPlayer)+"_su"
 	action_muovi_giu = "P"+str(nPlayer)+"_giù"
-	action_attacca = "P"+str(nPlayer)+"_attacca"
+	action_attacca = "P"+str(nPlayer)+"_attacco"
 	sprite.texture = playerSprites[nPlayer-1]
 	
 	update_animation_parameters(direzioneIniziale)
 	
 func _process(delta):
 	if Input.is_action_pressed(action_attacca):
-		#Codice
-		print("attacca")
-	pass
+		if(last_direzione == Vector2(1,0)):
+			martelloHitEast.disabled = false
+		else:
+			if(last_direzione == Vector2(-1,0)):
+				martelloHitWest.disabled = false
+			else:
+				if(last_direzione == Vector2(0,1)):
+					martelloHitSouth.disabled = false
+				else:
+					if(last_direzione == Vector2(0,-1)):
+						martelloHitNorth.disabled = false
+	else:
+		martelloHitNorth.disabled = true
+		martelloHitSouth.disabled = true
+		martelloHitWest.disabled = true
+		martelloHitEast.disabled = true
 		
 		
 func _physics_process(_delta):
@@ -46,6 +64,8 @@ func _physics_process(_delta):
 		Input.get_action_strength(action_muovi_destra) - Input.get_action_strength(action_muovi_sinistra),
 		Input.get_action_strength(action_muovi_giu) - Input.get_action_strength(action_muovi_su)
 	)
+	if(direzione != Vector2.ZERO):
+		last_direzione = direzione
 	update_animation_parameters(direzione)
 	velocity = direzione*velocita #Si deve chiamare velocity
 	
