@@ -1,19 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://c4cy183ggc7q0"]
+[gd_scene load_steps=9 format=3 uid="uid://cvjnqdad02g2m"]
 
-[ext_resource type="Script" path="res://Scripts/Livello.gd" id="1_2epdf"]
-[ext_resource type="LabelSettings" uid="uid://drkn81uruhnx7" path="res://LabelPunteggio.tres" id="2_vslau"]
-[ext_resource type="Texture2D" uid="uid://cy4om7aitviae" path="res://assets/P4_faccia.png" id="3_1i0x7"]
-[ext_resource type="Texture2D" uid="uid://dcjqy757al6k" path="res://assets/clessidra.png" id="3_8r7uc"]
-[ext_resource type="Texture2D" uid="uid://dp3lcofj5viii" path="res://assets/Tilesets/Grass.png" id="3_jk87e"]
-[ext_resource type="Texture2D" uid="uid://c33drf5qjr62h" path="res://assets/P3_faccia.png" id="4_e0rc3"]
-[ext_resource type="Texture2D" uid="uid://cw85qt42623wm" path="res://assets/Tilesets/Fences.png" id="4_qwkwf"]
-[ext_resource type="Script" path="res://Scripts/Timer.gd" id="5_cg8fw"]
-[ext_resource type="Texture2D" uid="uid://rl8pdph8y1hu" path="res://assets/P2_faccia.png" id="5_mup58"]
-[ext_resource type="Texture2D" uid="uid://d0cgfcn01wi48" path="res://assets/P1_faccia.png" id="6_brsta"]
-[ext_resource type="AudioStream" uid="uid://cw7asvg8fguh2" path="res://assets/GGJ2024.mp3" id="6_ygb1n"]
+[ext_resource type="Script" path="res://Scene/Fine.gd" id="1_frm1y"]
+[ext_resource type="Texture2D" uid="uid://d0cgfcn01wi48" path="res://assets/P1_faccia.png" id="7_2ucd4"]
+[ext_resource type="Texture2D" uid="uid://dp3lcofj5viii" path="res://assets/Tilesets/Grass.png" id="8_63j3a"]
+[ext_resource type="Texture2D" uid="uid://cw85qt42623wm" path="res://assets/Tilesets/Fences.png" id="9_05xql"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o0203"]
-texture = ExtResource("3_jk87e")
+texture = ExtResource("8_63j3a")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -229,7 +222,7 @@ texture = ExtResource("3_jk87e")
 8:6/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_faw5c"]
-texture = ExtResource("4_qwkwf")
+texture = ExtResource("9_05xql")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -300,75 +293,17 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_o0203")
 sources/2 = SubResource("TileSetAtlasSource_faw5c")
 
+[sub_resource type="LabelSettings" id="LabelSettings_3pyod"]
+font_size = 100
+
 [node name="Livello" type="Node2D"]
-script = ExtResource("1_2epdf")
+script = ExtResource("1_frm1y")
 
-[node name="LabelTimer" type="Label" parent="."]
-z_index = 1
-offset_left = 1656.0
-offset_right = 1882.0
-offset_bottom = 110.0
-text = "Test"
-label_settings = ExtResource("2_vslau")
-vertical_alignment = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="LabelTimer"]
-position = Vector2(-22, 58)
-scale = Vector2(0.0742188, 0.0820313)
-texture = ExtResource("3_8r7uc")
-
-[node name="LabelP4" type="Label" parent="."]
-z_index = 1
-offset_left = 1200.0
-offset_right = 1426.0
-offset_bottom = 110.0
-text = "Test"
-label_settings = ExtResource("2_vslau")
-vertical_alignment = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="LabelP4"]
-position = Vector2(-19, 57)
-texture = ExtResource("3_1i0x7")
-
-[node name="LabelP3" type="Label" parent="."]
-z_index = 1
-offset_left = 850.0
-offset_right = 1076.0
-offset_bottom = 110.0
-text = "Test"
-label_settings = ExtResource("2_vslau")
-vertical_alignment = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="LabelP3"]
-position = Vector2(-19, 57)
-texture = ExtResource("4_e0rc3")
-
-[node name="LabelP2" type="Label" parent="."]
-z_index = 1
-offset_left = 500.0
-offset_top = 1.0
-offset_right = 726.0
-offset_bottom = 111.0
-text = "Test"
-label_settings = ExtResource("2_vslau")
-vertical_alignment = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="LabelP2"]
-position = Vector2(-19, 57)
-texture = ExtResource("5_mup58")
-
-[node name="LabelP1" type="Label" parent="."]
-z_index = 1
-offset_left = 150.0
-offset_right = 376.0
-offset_bottom = 110.0
-text = "Test"
-label_settings = ExtResource("2_vslau")
-vertical_alignment = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="LabelP1"]
-position = Vector2(-19, 57)
-texture = ExtResource("6_brsta")
+[node name="P1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(925, 506)
+scale = Vector2(10.9063, 10.9063)
+texture = ExtResource("7_2ucd4")
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -10
@@ -379,20 +314,10 @@ layer_0/tile_data = PackedInt32Array(0, 65537, 1, 65536, 65537, 1, 131072, 65537
 layer_1/name = "Bordi"
 layer_1/tile_data = PackedInt32Array(393222, 131074, 3, 393223, 131074, 3, 393224, 131074, 3, 393225, 131074, 3, 393226, 131074, 3, 393227, 131074, 3, 393228, 131074, 3, 393229, 131074, 3, 393230, 131074, 3, 393231, 131074, 3, 393232, 131074, 3, 393233, 131074, 3, 393234, 131074, 3, 393235, 131074, 3, 393236, 131074, 3, 393237, 131074, 3, 393238, 131074, 3, 393239, 131074, 3, 393240, 131074, 3, 393241, 131074, 3, 393242, 131074, 3, 393243, 131074, 3, 393244, 131074, 3, 393245, 131074, 3, 393246, 131074, 3, 393247, 131074, 3, 393248, 131074, 3, 393249, 131074, 3, 393250, 131074, 3, 393251, 131074, 3, 393252, 131074, 3, 393253, 131074, 3, 393254, 131074, 3, 393255, 131074, 3, 393256, 131074, 3, 393257, 131074, 3, 393258, 131074, 0, 393259, 131074, 0, 393260, 131074, 0, 393261, 131074, 0, 393262, 131074, 0, 393263, 131074, 0, 393264, 131074, 0, 393265, 131074, 0, 393266, 131074, 0, 393267, 131074, 0, 393268, 131074, 0, 393269, 131074, 0, 393270, 131074, 0, 393271, 131074, 0, 393272, 131074, 0, 393273, 131074, 0, 393274, 131074, 0, 393275, 131074, 0, 393276, 131074, 0, 393277, 131074, 0, 393278, 131074, 0, 393279, 131074, 0, 393280, 131074, 0, 393281, 131074, 0, 393282, 131074, 0, 393283, 131074, 0, 393284, 131074, 0, 393285, 131074, 0, 393286, 131074, 0, 393287, 131074, 0, 393288, 131074, 0, 393289, 131074, 0, 393290, 131074, 0, 393291, 131074, 0, 393292, 131074, 0, 393293, 131074, 0, 393294, 131074, 0, 393295, 131074, 0, 393296, 131074, 0, 393297, 131074, 0, 393298, 131074, 0, 393299, 131074, 0, 393300, 131074, 0, 393301, 131074, 0, 393302, 131074, 0, 393303, 131074, 0, 393304, 131074, 0, 393305, 131074, 0, 393306, 131074, 0, 393307, 131074, 0, 393308, 131074, 0, 393309, 131074, 0, 393310, 131074, 0, 393311, 131074, 0, 393312, 131074, 0, 393313, 131074, 0, 393314, 131074, 0, 393315, 131074, 0, 393316, 131074, 0, 393317, 131074, 0, 393318, 131074, 0, 393319, 131074, 0, 393320, 131074, 0, 393321, 131074, 0, 393322, 131074, 0, 393323, 131074, 0, 393324, 131074, 0, 393325, 131074, 0, 393326, 131074, 0, 393327, 131074, 0, 393221, 131074, 3, 458757, 2, 0, 524293, 2, 0, 589829, 2, 0, 655365, 2, 0, 720901, 2, 0, 786437, 2, 0, 851973, 2, 0, 917509, 2, 0, 983045, 2, 0, 1048581, 2, 0, 1114117, 2, 0, 1179653, 2, 0, 1245189, 2, 0, 1310725, 2, 0, 1376261, 2, 0, 1441797, 2, 0, 1507333, 2, 0, 1572869, 2, 0, 1638405, 2, 0, 1703941, 2, 0, 1769477, 2, 0, 1835013, 2, 0, 1900549, 2, 0, 1966085, 2, 0, 2031621, 2, 0, 2097157, 2, 0, 2162693, 2, 0, 2228229, 2, 0, 2293765, 2, 0, 2359301, 2, 0, 2424837, 2, 0, 2490373, 2, 0, 2555909, 2, 0, 2621445, 2, 0, 2686981, 2, 0, 2752517, 2, 0, 2818053, 2, 0, 2883589, 2, 0, 2949125, 2, 0, 3014661, 2, 0, 3080197, 2, 0, 3145733, 2, 0, 3211269, 2, 0, 3276805, 2, 0, 3342341, 2, 0, 3407877, 2, 0, 3473413, 2, 0, 3538949, 2, 0, 3604485, 2, 0, 3670021, 2, 0, 3735557, 2, 0, 3801093, 65538, 3, 3801094, 131074, 3, 3801095, 131074, 3, 3801096, 131074, 3, 3801097, 131074, 3, 3801098, 131074, 3, 3801099, 131074, 3, 3801100, 131074, 3, 3801101, 131074, 3, 3801102, 131074, 3, 3801103, 131074, 3, 3801104, 131074, 3, 3801105, 131074, 3, 3801106, 131074, 3, 3801107, 131074, 3, 3801108, 131074, 3, 3801109, 131074, 3, 3801110, 131074, 3, 3801111, 131074, 0, 3801112, 131074, 0, 3801113, 131074, 0, 3801114, 131074, 0, 3801115, 131074, 0, 3801116, 131074, 0, 3801117, 131074, 0, 3801118, 131074, 0, 3801119, 131074, 0, 3801120, 131074, 0, 3801121, 131074, 3, 3801122, 131074, 3, 3801123, 131074, 3, 3801124, 131074, 3, 3801125, 131074, 3, 3801126, 131074, 3, 3801127, 131074, 3, 3801128, 131074, 3, 3801129, 131074, 3, 3801130, 131074, 3, 3801131, 131074, 3, 3801132, 131074, 3, 3801133, 131074, 3, 3801134, 131074, 3, 3801135, 131074, 3, 3801136, 131074, 3, 3801137, 131074, 3, 3801138, 131074, 3, 3801139, 131074, 3, 3801140, 131074, 3, 3801141, 131074, 3, 3801142, 131074, 3, 3801143, 131074, 3, 3801144, 131074, 3, 3801145, 131074, 3, 3801146, 131074, 3, 3801147, 131074, 3, 3801148, 131074, 3, 3801149, 131074, 3, 3801150, 131074, 3, 3801151, 131074, 3, 3801152, 131074, 3, 3801153, 131074, 3, 3801154, 131074, 3, 3801155, 131074, 3, 3801156, 131074, 3, 3801157, 131074, 3, 3801158, 131074, 3, 3801159, 131074, 3, 3801160, 131074, 3, 3801161, 131074, 3, 3801162, 131074, 3, 3801163, 131074, 3, 3801164, 131074, 3, 3801165, 131074, 3, 3801166, 131074, 3, 3801167, 131074, 3, 3801168, 131074, 3, 3801169, 131074, 3, 3801170, 131074, 3, 3801171, 131074, 3, 3801172, 131074, 3, 3801173, 131074, 3, 3801174, 131074, 3, 3801175, 131074, 3, 3801176, 131074, 3, 3801177, 131074, 3, 3801178, 131074, 3, 3801179, 131074, 3, 3801180, 131074, 3, 3801181, 131074, 3, 3801182, 131074, 3, 3801183, 131074, 3, 3801184, 131074, 3, 3801185, 131074, 3, 3801186, 131074, 3, 3801187, 131074, 3, 3801188, 131074, 3, 3801189, 131074, 3, 3801190, 131074, 3, 3801191, 131074, 3, 3801192, 131074, 3, 3801193, 131074, 3, 3801194, 131074, 3, 3801195, 131074, 3, 3801196, 131074, 3, 3801197, 131074, 3, 3801198, 131074, 3, 3801199, 131074, 3, 3801200, 131074, 0, 3735664, 2, 0, 3670128, 2, 0, 3604592, 2, 0, 3539056, 2, 0, 3473520, 2, 0, 3407984, 2, 0, 3342448, 2, 0, 3276912, 2, 0, 3211376, 2, 0, 3145840, 2, 0, 3080304, 2, 0, 3014768, 2, 0, 2949232, 2, 0, 2883696, 2, 0, 2818160, 2, 0, 2752624, 2, 0, 2687088, 2, 0, 2621552, 2, 0, 2556016, 2, 0, 2490480, 2, 0, 2424944, 2, 0, 2359408, 2, 0, 2293872, 2, 0, 2228336, 2, 0, 2162800, 2, 0, 2097264, 2, 0, 2031728, 2, 0, 1966192, 2, 0, 1900656, 2, 0, 1835120, 2, 0, 1769584, 2, 0, 1704048, 2, 0, 1638512, 2, 0, 1572976, 2, 0, 1507440, 2, 0, 1441904, 2, 0, 1376368, 2, 0, 1310832, 2, 0, 1245296, 2, 0, 1179760, 2, 0, 1114224, 2, 0, 1048688, 2, 0, 983152, 2, 0, 917616, 2, 0, 852080, 2, 0, 786544, 2, 0, 721008, 2, 0, 655472, 2, 0, 589936, 2, 0, 524400, 2, 0, 458864, 2, 0, 393328, 2, 0)
 
-[node name="Timer" type="Timer" parent="."]
-one_shot = true
-autostart = true
-script = ExtResource("5_cg8fw")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_ygb1n")
-autoplay = true
-
-[node name="Timer2" type="Timer" parent="."]
-process_callback = 0
-wait_time = 90.0
-one_shot = true
-autostart = true
-
-[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
-[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[node name="Label" type="Label" parent="."]
+offset_left = 440.0
+offset_top = 151.0
+offset_right = 1445.0
+offset_bottom = 308.0
+text = "Ha fatto ridere di più"
+label_settings = SubResource("LabelSettings_3pyod")
