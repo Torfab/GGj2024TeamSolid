@@ -21,6 +21,7 @@ var last_direzione;
 @export var action_muovi_su = ""
 @export var action_muovi_giu = ""
 @export var action_attacca = ""
+@export var action_special = ""
 	
 @onready var animationTree = $AnimationTree
 @onready var sprite = $Sprite2D
@@ -40,8 +41,9 @@ func _ready():
 	action_muovi_su = "P"+str(nPlayer)+"_su"
 	action_muovi_giu = "P"+str(nPlayer)+"_giù"
 	action_attacca = "P"+str(nPlayer)+"_attacco"
+	action_special = "P"+str(nPlayer)+"_special"
 	sprite.texture = playerSprites[nPlayer-1]
-	
+	add_to_group("P"+str(nPlayer))
 	update_animation_parameters(direzioneIniziale)
 	
 func _process(delta):
@@ -62,9 +64,10 @@ func _process(delta):
 		martelloHitSouth.disabled = true
 		martelloHitWest.disabled = true
 		martelloHitEast.disabled = true
-	if(Input.is_action_pressed("P1_special") && currentWeapon != null):
+	if(Input.is_action_pressed(action_special) && currentWeapon != null):
+		SignalBus.shoot_special.emit(nPlayer, position, last_direzione, currentWeapon)
 		currentWeapon = null
-		print("sparo una "+currentWeapon)
+		currentWeaponIstance.queue_free()
 		
 func _physics_process(_delta):
 	var direzione = Vector2(

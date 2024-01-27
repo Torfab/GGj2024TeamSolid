@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://5l026pxyyxr6"]
+
+[ext_resource type="Script" path="res://Scene/Bullets/Torta.gd" id="1_w3ysc"]
+[ext_resource type="Texture2D" uid="uid://cqkg0aa02ekko" path="res://assets/Torta.png" id="2_3qwhj"]
+
+[node name="Torta" type="Node2D"]
+script = ExtResource("1_w3ysc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 0.55676
+texture = ExtResource("2_3qwhj")
+hframes = 2
+vframes = 2

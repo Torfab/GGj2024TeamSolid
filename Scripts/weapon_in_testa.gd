@@ -12,8 +12,6 @@ var weaponSprites = [
 var currentWeapon="None"
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
-	
 	if(currentWeapon!="None"):
 		sprite.texture=weaponSprites[global.weapons.find(currentWeapon)]
 	pass # Replace with function body.
