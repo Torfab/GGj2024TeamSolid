@@ -1,7 +1,7 @@
 [gd_scene load_steps=29 format=3 uid="uid://drna66qb87im4"]
 
-[ext_resource type="Texture2D" uid="uid://cblpmpckdlfb4" path="res://assets/player1.png" id="1_2hlal"]
-[ext_resource type="Script" path="res://personaggi/player1.gd" id="1_b1nk1"]
+[ext_resource type="Script" path="res://Scripts/player1.gd" id="1_kucxw"]
+[ext_resource type="Texture2D" uid="uid://cblpmpckdlfb4" path="res://assets/player1.png" id="2_tcrhp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78f47"]
 size = Vector2(33, 47)
@@ -230,31 +230,33 @@ states/fermo/position = Vector2(358, 100)
 transitions = ["Start", "fermo", SubResource("AnimationNodeStateMachineTransition_oc821"), "fermo", "cammina", SubResource("AnimationNodeStateMachineTransition_8vf37"), "cammina", "fermo", SubResource("AnimationNodeStateMachineTransition_u75j4")]
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Giocatore"]]
-script = ExtResource("1_b1nk1")
+script = ExtResource("1_kucxw")
 
-[node name="CollisionSouth" type="CollisionShape2D" parent="."]
-position = Vector2(-4.5, 56.5)
+[node name="AreaCollisionMartello" type="Area2D" parent="."]
+
+[node name="CollisionEast" type="CollisionShape2D" parent="AreaCollisionMartello"]
+position = Vector2(31, 9)
 shape = SubResource("RectangleShape2D_78f47")
 disabled = true
 
-[node name="CollisionNorth" type="CollisionShape2D" parent="."]
+[node name="CollisionNorth" type="CollisionShape2D" parent="AreaCollisionMartello"]
 position = Vector2(-5, -25)
 shape = SubResource("RectangleShape2D_78f47")
 disabled = true
 
-[node name="CollisionEast" type="CollisionShape2D" parent="."]
-position = Vector2(28, 9)
+[node name="CollisionWest" type="CollisionShape2D" parent="AreaCollisionMartello"]
+position = Vector2(-40, 10)
 shape = SubResource("RectangleShape2D_78f47")
 disabled = true
 
-[node name="CollisionWest" type="CollisionShape2D" parent="."]
-position = Vector2(-37, 10)
+[node name="CollisionSouth" type="CollisionShape2D" parent="AreaCollisionMartello"]
+position = Vector2(-4.5, 58.5)
 shape = SubResource("RectangleShape2D_78f47")
 disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, 0)
-texture = ExtResource("1_2hlal")
+texture = ExtResource("2_tcrhp")
 hframes = 2
 vframes = 4
 
@@ -275,3 +277,5 @@ tree_root = SubResource("AnimationNodeStateMachine_yrvyl")
 anim_player = NodePath("../AnimationPlayer")
 parameters/cammina/blend_position = Vector2(-0.313853, -0.0291005)
 parameters/fermo/blend_position = Vector2(-0.0389611, 0.0873015)
+
+[connection signal="body_entered" from="AreaCollisionMartello" to="." method="_on_area_collision_martello_body_entered"]

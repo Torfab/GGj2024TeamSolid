@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://dgdct5tebjel7"]
 
-[ext_resource type="Script" path="res://livelli/pickableWeapon.gd" id="1_b0wdu"]
-[ext_resource type="Script" path="res://livelli/PickableWeaponArea.gd" id="2_twoxg"]
-[ext_resource type="Script" path="res://livelli/CollisionShape2D.gd" id="4_c7eiq"]
+[ext_resource type="Script" path="res://livelli/pickableWeapon.gd" id="1_7wmh2"]
+[ext_resource type="Script" path="res://Scripts/PickableWeaponArea.gd" id="2_n2ygj"]
+[ext_resource type="Script" path="res://Scripts/CollisionShape2D.gd" id="3_mfw0h"]
 
 [sub_resource type="Animation" id="Animation_hlpck"]
 resource_name = "idle"
@@ -30,10 +30,10 @@ _data = {
 radius = 28.7924
 
 [node name="PickableWeapon" type="Node2D"]
-script = ExtResource("1_b0wdu")
+script = ExtResource("1_7wmh2")
 
 [node name="Area2D" type="Area2D" parent="." groups=["Giocatore"]]
-script = ExtResource("2_twoxg")
+script = ExtResource("2_n2ygj")
 
 [node name="SpriteTorta2D" type="Sprite2D" parent="Area2D"]
 position = Vector2(866, 602)
@@ -51,6 +51,6 @@ libraries = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(874, 601)
 shape = SubResource("CircleShape2D_krje6")
-script = ExtResource("4_c7eiq")
+script = ExtResource("3_mfw0h")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

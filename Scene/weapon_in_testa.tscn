@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://1h6bt4xxvi5f"]
 
-[ext_resource type="Script" path="res://livelli/weapon_in_testa.gd" id="1_nmk7t"]
+[ext_resource type="Script" path="res://Scripts/weapon_in_testa.gd" id="1_4p0rv"]
 
 [node name="WeaponInTesta" type="Node2D"]
-script = ExtResource("1_nmk7t")
+script = ExtResource("1_4p0rv")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 hframes = 2

@@ -6,7 +6,7 @@ var playerSprites = [
 	preload("res://assets/player4.png")
 ]
 
-var theweapon = preload("res://livelli/weapon_in_testa.tscn")
+var theweapon = preload("res://Scene/weapon_in_testa.tscn")
 
 @export var velocita:float = 400
 @export var direzioneIniziale = Vector2(0, 1)

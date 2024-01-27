@@ -1,6 +1,6 @@
 extends Timer
 
-var spawnweapon = preload("res://livelli/pickableWeapon.tscn")
+var spawnweapon = preload("res://Scene/pickableWeapon.tscn")
 
 var rng = RandomNumberGenerator.new()
 
