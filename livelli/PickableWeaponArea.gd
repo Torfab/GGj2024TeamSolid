@@ -6,6 +6,8 @@ extends Node2D
 var direction=1
 var quantity=1
 
+var weaponPosition=-1
+
 var weaponSprites = [
 	preload("res://assets/Torta.png"),
 	preload("res://assets/Fiore.png"),
@@ -16,7 +18,8 @@ var weapons=["Torta", "Fiore", "Banana"]
 var currentWeapon
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var weaponPosition=randi_range(0,2)
+	if(weaponPosition==-1):
+		weaponPosition=randi_range(0,2)
 	currentWeapon=weapons[weaponPosition]
 	sprite2D.texture=weaponSprites[weaponPosition]
 	animationWeapon.play("idle")
@@ -36,7 +39,7 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if (body.has_method("setWeapon")):
-		body.setWeapon(currentWeapon)
+		body.setWeapon(weaponPosition)
 	if body.is_in_group("Giocatore"):
 		destroyer()
 		
