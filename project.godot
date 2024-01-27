@@ -14,6 +14,10 @@ config/name="ClownGame"
 run/main_scene="res://livelli/Intro.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 
+[autoload]
+
+global="*res://livelli/globals.gd"
+
 [display]
 
 window/size/viewport_width=1920
