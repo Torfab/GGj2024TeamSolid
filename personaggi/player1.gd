@@ -5,6 +5,9 @@ var playerSprites = [
 	preload("res://assets/player3.png"),
 	preload("res://assets/player4.png")
 ]
+
+var theweapon = preload("res://livelli/weapon_in_testa.tscn")
+
 @export var velocita:float = 400
 @export var direzioneIniziale = Vector2(0, 1)
 
@@ -27,7 +30,7 @@ var last_direzione;
 
 @onready var stato = animationTree.get("parameters/playback")
 
-
+var currentWeapon
 
 func _ready():
 	action_muovi_destra = "P"+str(nPlayer)+"_destra"
@@ -84,8 +87,14 @@ func setta_stato(direzione :Vector2):
 		stato.travel("fermo")
 		
 func setWeapon(weapon):
+	currentWeapon=weapon
+	createWeapon(weapon)
 	print("ho una " + str(weapon))
 
+func createWeapon(weapon):
+	var obj = theweapon.instantiate()
+	add_child(obj)
+	print("sto creando ", weapon)
 
 func _on_area_collision_martello_body_entered(body):
 	if(body.is_in_group("Giocatore")):
