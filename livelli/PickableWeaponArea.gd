@@ -14,14 +14,17 @@ var weaponSprites = [
 	preload("res://assets/Banana.png"),
 ]
 
-var weapons=["Torta", "Fiore", "Banana"]
-var currentWeapon
+var currentWeapon="None"
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if(weaponPosition==-1):
-		weaponPosition=randi_range(0,2)
-	currentWeapon=weapons[weaponPosition]
+	if(currentWeapon=="None"):
+		weaponPosition=randi_range(0, len(global.weapons)-1)
+		currentWeapon=global.weapons[weaponPosition]
+	else:
+		weaponPosition=global.weapons.find(currentWeapon)
+		print("mbare")
 	sprite2D.texture=weaponSprites[weaponPosition]
+	
 	animationWeapon.play("idle")
 	pass
 
@@ -39,7 +42,7 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if (body.has_method("setWeapon")):
-		body.setWeapon(weaponPosition)
+		body.setWeapon(currentWeapon)
 	if body.is_in_group("Giocatore"):
 		destroyer()
 		
