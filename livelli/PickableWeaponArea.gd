@@ -2,8 +2,11 @@ extends Node2D
 
 @onready var animationWeapon=$AnimationWeapon
 
+var weapons=["torta", "fiore", "banana"]
+var currentWeapon
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	currentWeapon=weapons[randi_range(0,2)]
 	animationWeapon.play("idle")
 	pass
 
@@ -14,6 +17,7 @@ func _process(delta):
 
 
 func _on_body_entered(body):
+	body.setWeapon(currentWeapon)
 	if body.is_in_group("Giocatore"):
 		destroyer()
 		

@@ -62,3 +62,6 @@ func setta_stato(direzione :Vector2):
 		stato.travel("cammina")
 	else:
 		stato.travel("fermo")
+		
+func setWeapon(weapon):
+	print("ho una " + weapon)
