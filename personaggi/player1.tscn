@@ -232,23 +232,25 @@ transitions = ["Start", "fermo", SubResource("AnimationNodeStateMachineTransitio
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Giocatore"]]
 script = ExtResource("1_b1nk1")
 
-[node name="CollisionSouth" type="CollisionShape2D" parent="."]
-position = Vector2(-4.5, 56.5)
-shape = SubResource("RectangleShape2D_78f47")
-disabled = true
+[node name="AreaCollisionMartello" type="Area2D" parent="."]
 
-[node name="CollisionNorth" type="CollisionShape2D" parent="."]
+[node name="CollisionNorth" type="CollisionShape2D" parent="AreaCollisionMartello"]
 position = Vector2(-5, -25)
 shape = SubResource("RectangleShape2D_78f47")
 disabled = true
 
-[node name="CollisionEast" type="CollisionShape2D" parent="."]
-position = Vector2(28, 9)
+[node name="CollisionEast" type="CollisionShape2D" parent="AreaCollisionMartello"]
+position = Vector2(31, 9)
 shape = SubResource("RectangleShape2D_78f47")
 disabled = true
 
-[node name="CollisionWest" type="CollisionShape2D" parent="."]
-position = Vector2(-37, 10)
+[node name="CollisionWest" type="CollisionShape2D" parent="AreaCollisionMartello"]
+position = Vector2(-40, 10)
+shape = SubResource("RectangleShape2D_78f47")
+disabled = true
+
+[node name="CollisionSouth" type="CollisionShape2D" parent="AreaCollisionMartello"]
+position = Vector2(-4.5, 58.5)
 shape = SubResource("RectangleShape2D_78f47")
 disabled = true
 
@@ -275,3 +277,5 @@ tree_root = SubResource("AnimationNodeStateMachine_yrvyl")
 anim_player = NodePath("../AnimationPlayer")
 parameters/cammina/blend_position = Vector2(-0.313853, -0.0291005)
 parameters/fermo/blend_position = Vector2(-0.0389611, 0.0873015)
+
+[connection signal="body_entered" from="AreaCollisionMartello" to="." method="_on_area_collision_martello_body_entered"]

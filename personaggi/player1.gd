@@ -19,10 +19,10 @@ var last_direzione;
 	
 @onready var animationTree = $AnimationTree
 @onready var sprite = $Sprite2D
-@onready var martelloHitNorth = $CollisionNorth
-@onready var martelloHitSouth = $CollisionSouth
-@onready var martelloHitWest = $CollisionWest
-@onready var martelloHitEast = $CollisionEast
+@onready var martelloHitNorth = $AreaCollisionMartello/CollisionNorth
+@onready var martelloHitSouth = $AreaCollisionMartello/CollisionSouth
+@onready var martelloHitWest = $AreaCollisionMartello/CollisionWest
+@onready var martelloHitEast = $AreaCollisionMartello/CollisionEast
 
 
 @onready var stato = animationTree.get("parameters/playback")
@@ -85,3 +85,10 @@ func setta_stato(direzione :Vector2):
 		
 func setWeapon(weapon):
 	print("ho una " + weapon)
+
+
+func _on_area_collision_martello_body_entered(body):
+	if(body.is_in_group("Giocatore")):
+		global.punteggio[nPlayer-1]+=10
+		print(global.punteggio)
+		print("Colpito!")
