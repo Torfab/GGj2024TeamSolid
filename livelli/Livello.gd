@@ -11,7 +11,7 @@ func _ready():
 		add_child(player)
 
 func _process(delta):
-	$LabelP1.set("Text", global.punteggio[0])
-	$LabelP2.set("Text", global.punteggio[1])
-	$LabelP3.set("Text", global.punteggio[2])
-	$LabelP4.set("Text", global.punteggio[3])
+	$LabelP1.text = str(global.punteggio[0])
+	$LabelP2.text = str(global.punteggio[1])
+	$LabelP3.text = str(global.punteggio[2])
+	$LabelP4.text = str(global.punteggio[3])

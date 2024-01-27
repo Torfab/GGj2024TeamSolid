@@ -89,6 +89,6 @@ func setWeapon(weapon):
 
 func _on_area_collision_martello_body_entered(body):
 	if(body.is_in_group("Giocatore")):
-		global.punteggio[nPlayer-1]+=10
+		global.punteggio[nPlayer-1]+= global.sistemaPunti["martello"] + randi_range(0,5)
 		print(global.punteggio)
 		print("Colpito!")

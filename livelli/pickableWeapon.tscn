@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dgdct5tebjel7"]
+[gd_scene load_steps=7 format=3 uid="uid://dgdct5tebjel7"]
 
 [ext_resource type="Script" path="res://livelli/pickableWeapon.gd" id="1_b0wdu"]
 [ext_resource type="Script" path="res://livelli/PickableWeaponArea.gd" id="2_twoxg"]
-[ext_resource type="Texture2D" uid="uid://cqkg0aa02ekko" path="res://assets/Torta.png" id="3_2sx30"]
 [ext_resource type="Script" path="res://livelli/CollisionShape2D.gd" id="4_c7eiq"]
 
 [sub_resource type="Animation" id="Animation_hlpck"]
@@ -39,7 +38,6 @@ script = ExtResource("2_twoxg")
 [node name="SpriteTorta2D" type="Sprite2D" parent="Area2D"]
 position = Vector2(866, 602)
 scale = Vector2(3.5, 3.5)
-texture = ExtResource("3_2sx30")
 hframes = 2
 vframes = 2
 frame = 1

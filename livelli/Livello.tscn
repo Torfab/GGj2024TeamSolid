@@ -297,22 +297,27 @@ sources/2 = SubResource("TileSetAtlasSource_faw5c")
 script = ExtResource("1_q4qik")
 
 [node name="LabelP1" type="Label" parent="."]
+z_index = 1
 offset_right = 226.0
 offset_bottom = 85.0
+text = "A"
 
 [node name="LabelP2" type="Label" parent="."]
+z_index = 1
 offset_left = 45.0
 offset_top = 899.0
 offset_right = 271.0
 offset_bottom = 984.0
 
 [node name="LabelP3" type="Label" parent="."]
+z_index = 1
 offset_left = 1558.0
 offset_top = 2.0
 offset_right = 1784.0
 offset_bottom = 87.0
 
 [node name="LabelP4" type="Label" parent="."]
+z_index = 1
 offset_left = 1581.0
 offset_top = 920.0
 offset_right = 1807.0
