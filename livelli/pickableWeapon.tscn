@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgdct5tebjel7"]
+[gd_scene load_steps=8 format=3 uid="uid://dgdct5tebjel7"]
 
 [ext_resource type="Script" path="res://livelli/pickableWeapon.gd" id="1_b0wdu"]
 [ext_resource type="Texture2D" uid="uid://cqkg0aa02ekko" path="res://assets/TortaPlaceHolder.png" id="2_6uqrp"]
+[ext_resource type="Script" path="res://livelli/PickableWeaponArea.gd" id="2_twoxg"]
+[ext_resource type="Script" path="res://livelli/CollisionShape2D.gd" id="4_c7eiq"]
 
 [sub_resource type="Animation" id="Animation_hlpck"]
 resource_name = "idle"
@@ -10,7 +12,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("SpriteTorta2D:frame")
+tracks/0/path = NodePath("Area2D/SpriteTorta2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -25,18 +27,32 @@ _data = {
 "idle": SubResource("Animation_hlpck")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_krje6"]
+radius = 28.7924
+
 [node name="PickableWeapon" type="Node2D"]
 script = ExtResource("1_b0wdu")
 
-[node name="SpriteTorta2D" type="Sprite2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_twoxg")
+
+[node name="SpriteTorta2D" type="Sprite2D" parent="Area2D"]
 position = Vector2(866, 602)
 scale = Vector2(3.5, 3.5)
 texture = ExtResource("2_6uqrp")
 hframes = 2
 vframes = 2
-frame = 2
+frame = 1
 
-[node name="AnimationWeapon" type="AnimationPlayer" parent="."]
+[node name="AnimationWeapon" type="AnimationPlayer" parent="Area2D"]
+root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_grh44")
 }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(874, 601)
+shape = SubResource("CircleShape2D_krje6")
+script = ExtResource("4_c7eiq")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

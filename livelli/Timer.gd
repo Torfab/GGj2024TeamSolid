@@ -15,8 +15,10 @@ func _process(delta):
 
 
 func _on_timeout():
-	print("ciao")
-	var obj = spawnweapon.instantiate()
-	add_child(obj)
-	obj.position= Vector2(randi_range(-100, 100),randi_range(-100, 100))
-	start(randi_range(1,10))
+	if(global.weaponsInPlay<global.weaponsMax):
+		print(global.weaponsInPlay)
+		var obj = spawnweapon.instantiate()
+		add_child(obj)
+		obj.position= Vector2(randi_range(-1000, 1000),randi_range(-300, 300))
+		global.weaponsInPlay=global.weaponsInPlay+1
+	start(randi_range(1,2))

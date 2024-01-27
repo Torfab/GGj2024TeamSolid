@@ -226,7 +226,7 @@ states/fermo/node = SubResource("AnimationNodeBlendSpace2D_bvyjf")
 states/fermo/position = Vector2(358, 100)
 transitions = ["Start", "fermo", SubResource("AnimationNodeStateMachineTransition_oc821"), "fermo", "cammina", SubResource("AnimationNodeStateMachineTransition_8vf37"), "cammina", "fermo", SubResource("AnimationNodeStateMachineTransition_u75j4")]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["Giocatore"]]
 script = ExtResource("1_b1nk1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
