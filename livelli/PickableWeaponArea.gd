@@ -1,15 +1,24 @@
 extends Node2D
 
 @onready var animationWeapon=$AnimationWeapon
+@onready var sprite2D=$SpriteTorta2D
 
 var direction=1
 var quantity=1
 
-var weapons=["torta", "fiore", "banana"]
+var weaponSprites = [
+	preload("res://assets/Torta.png"),
+	preload("res://assets/Fiore.png"),
+	preload("res://assets/Banana.png"),
+]
+
+var weapons=["Torta", "Fiore", "Banana"]
 var currentWeapon
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	currentWeapon=weapons[randi_range(0,2)]
+	var weaponPosition=randi_range(0,2)
+	currentWeapon=weapons[weaponPosition]
+	sprite2D.texture=weaponSprites[weaponPosition]
 	animationWeapon.play("idle")
 	pass
 

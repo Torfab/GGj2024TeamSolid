@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqkg0aa02ekko"
-path="res://.godot/imported/TortaPlaceHolder.png-453390290033252b2e205b3369293f35.ctex"
+uid="uid://d3cv7hvqpa462"
+path="res://.godot/imported/Fiore.png-1ed87a02ed8aadce58339bc48944aa81.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TortaPlaceHolder.png"
-dest_files=["res://.godot/imported/TortaPlaceHolder.png-453390290033252b2e205b3369293f35.ctex"]
+source_file="res://assets/Fiore.png"
+dest_files=["res://.godot/imported/Fiore.png-1ed87a02ed8aadce58339bc48944aa81.ctex"]
 
 [params]
 
