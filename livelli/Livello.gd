@@ -1,6 +1,6 @@
 extends Node2D
 var giocatore = preload("res://personaggi/player1.tscn")
-var positioni = [[200, 200], [200, 600], [600, 200], [600, 600]]
+var positioni = [[150, 150], [150, 900], [1700, 150], [1700, 900]]
 
 func _ready():
 	#global.giocatori = 1
