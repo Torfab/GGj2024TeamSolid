@@ -11,12 +11,12 @@ config_version=5
 [application]
 
 config/name="ClownGame"
-run/main_scene="res://livelli/Intro.tscn"
+run/main_scene="res://Scene/Intro.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 
 [autoload]
 
-global="*res://livelli/globals.gd"
+global="*res://Scripts/globals.gd"
 
 [display]
 

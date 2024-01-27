@@ -1,43 +1,43 @@
 [gd_scene load_steps=4 format=3 uid="uid://dmgb30068a2o8"]
 
-[ext_resource type="Script" path="res://livelli/PlayerSelection.gd" id="1_5l7sg"]
-[ext_resource type="Texture2D" uid="uid://xropb3assbq5" path="res://assets/introbg.jpeg" id="2_g3uiq"]
-[ext_resource type="Texture2D" uid="uid://dnmpctx17jwku" path="res://assets/startBTN.png" id="3_ag5a4"]
+[ext_resource type="Script" path="res://Scripts/PlayerSelection.gd" id="1_75qu6"]
+[ext_resource type="Texture2D" uid="uid://xropb3assbq5" path="res://assets/introbg.jpeg" id="2_akq7o"]
+[ext_resource type="Texture2D" uid="uid://dnmpctx17jwku" path="res://assets/startBTN.png" id="3_fupht"]
 
 [node name="PlayerSelection" type="Node2D"]
-script = ExtResource("1_5l7sg")
+script = ExtResource("1_75qu6")
 
 [node name="Introbg" type="Sprite2D" parent="."]
 position = Vector2(961.5, 537.5)
 scale = Vector2(1.07422, 1.05176)
-texture = ExtResource("2_g3uiq")
+texture = ExtResource("2_akq7o")
 
 [node name="2 giocatori" type="TextureButton" parent="."]
 offset_left = 759.0
 offset_top = 658.0
 offset_right = 1171.0
 offset_bottom = 789.0
-texture_normal = ExtResource("3_ag5a4")
-texture_pressed = ExtResource("3_ag5a4")
-texture_hover = ExtResource("3_ag5a4")
+texture_normal = ExtResource("3_fupht")
+texture_pressed = ExtResource("3_fupht")
+texture_hover = ExtResource("3_fupht")
 
 [node name="3 giocatori" type="TextureButton" parent="."]
 offset_left = 759.0
 offset_top = 792.0
 offset_right = 1171.0
 offset_bottom = 923.0
-texture_normal = ExtResource("3_ag5a4")
-texture_pressed = ExtResource("3_ag5a4")
-texture_hover = ExtResource("3_ag5a4")
+texture_normal = ExtResource("3_fupht")
+texture_pressed = ExtResource("3_fupht")
+texture_hover = ExtResource("3_fupht")
 
 [node name="4 giocatori" type="TextureButton" parent="."]
 offset_left = 759.0
 offset_top = 920.0
 offset_right = 1171.0
 offset_bottom = 1051.0
-texture_normal = ExtResource("3_ag5a4")
-texture_pressed = ExtResource("3_ag5a4")
-texture_hover = ExtResource("3_ag5a4")
+texture_normal = ExtResource("3_fupht")
+texture_pressed = ExtResource("3_fupht")
+texture_hover = ExtResource("3_fupht")
 
 [connection signal="pressed" from="2 giocatori" to="." method="_on_players_selected" binds= [2]]
 [connection signal="pressed" from="3 giocatori" to="." method="_on_players_selected" binds= [3]]
