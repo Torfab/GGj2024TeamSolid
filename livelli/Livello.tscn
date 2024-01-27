@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4cy183ggc7q0"]
+[gd_scene load_steps=9 format=3 uid="uid://c4cy183ggc7q0"]
 
 [ext_resource type="Script" path="res://livelli/Livello.gd" id="1_q4qik"]
 [ext_resource type="Texture2D" uid="uid://dp3lcofj5viii" path="res://assets/Tilesets/Grass.png" id="2_5s841"]
 [ext_resource type="Texture2D" uid="uid://cw85qt42623wm" path="res://assets/Tilesets/Fences.png" id="2_bf81y"]
+[ext_resource type="AudioStream" uid="uid://cw7asvg8fguh2" path="res://assets/GGJ2024.mp3" id="5_0jjxn"]
 [ext_resource type="Script" path="res://livelli/Timer.gd" id="7_t38rn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o0203"]
@@ -336,5 +337,9 @@ layer_1/tile_data = PackedInt32Array(393222, 131074, 3, 393223, 131074, 3, 39322
 one_shot = true
 autostart = true
 script = ExtResource("7_t38rn")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_0jjxn")
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

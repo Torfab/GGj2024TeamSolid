@@ -6,8 +6,8 @@ var weaponsInPlay=0
 
 var punteggio = [0,0,0,0]
 var sistemaPunti = {
-	"martello": 10,
-	"fiore": 15,
-	"torta": 20,
-	"banana": 20
+	"Martello": 10,
+	"Fiore": 15,
+	"Torta": 20,
+	"Banana": 20
 }
