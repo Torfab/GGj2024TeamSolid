@@ -9,6 +9,8 @@ extends CharacterBody2D
 
 @onready var stato = animationTree.get("parameters/playback")
 
+
+
 func _ready():
 	update_animation_parameters(direzioneIniziale)
 	

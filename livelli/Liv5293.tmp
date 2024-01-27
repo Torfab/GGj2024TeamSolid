@@ -315,8 +315,4 @@ position = Vector2(1103, 571)
 script = ExtResource("4_xmb2c")
 
 [node name="Timer" type="Timer" parent="."]
-one_shot = true
-autostart = true
 script = ExtResource("7_t38rn")
-
-[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

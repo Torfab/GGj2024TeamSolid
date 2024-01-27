@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgdct5tebjel7"]
+
+[ext_resource type="Script" path="res://livelli/pickableWeapon.gd" id="1_b0wdu"]
+[ext_resource type="Texture2D" uid="uid://cqkg0aa02ekko" path="res://assets/TortaPlaceHolder.png" id="2_6uqrp"]
+
+[sub_resource type="Animation" id="Animation_hlpck"]
+resource_name = "idle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteTorta2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 0, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_grh44"]
+_data = {
+"idle": SubResource("Animation_hlpck")
+}
+
+[node name="PickableWeapon" type="Node2D"]
+script = ExtResource("1_b0wdu")
+
+[node name="SpriteTorta2D" type="Sprite2D" parent="."]
+position = Vector2(866, 602)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_6uqrp")
+hframes = 2
+vframes = 2
+frame = 2
+
+[node name="AnimationWeapon" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_grh44")
+}
