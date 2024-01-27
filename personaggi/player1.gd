@@ -84,7 +84,7 @@ func setta_stato(direzione :Vector2):
 		stato.travel("fermo")
 		
 func setWeapon(weapon):
-	print("ho una " + weapon)
+	print("ho una " + str(weapon))
 
 
 func _on_area_collision_martello_body_entered(body):
