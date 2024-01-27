@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4cy183ggc7q0"]
+[gd_scene load_steps=10 format=3 uid="uid://c4cy183ggc7q0"]
 
 [ext_resource type="Script" path="res://livelli/Livello.gd" id="1_q4qik"]
 [ext_resource type="Texture2D" uid="uid://dp3lcofj5viii" path="res://assets/Tilesets/Grass.png" id="2_5s841"]
 [ext_resource type="Texture2D" uid="uid://cw85qt42623wm" path="res://assets/Tilesets/Fences.png" id="2_bf81y"]
+[ext_resource type="LabelSettings" uid="uid://drkn81uruhnx7" path="res://LabelPunteggio.tres" id="2_jh43v"]
 [ext_resource type="AudioStream" uid="uid://cw7asvg8fguh2" path="res://assets/GGJ2024.mp3" id="5_0jjxn"]
 [ext_resource type="Script" path="res://livelli/Timer.gd" id="7_t38rn"]
 
@@ -301,7 +302,8 @@ script = ExtResource("1_q4qik")
 z_index = 1
 offset_right = 226.0
 offset_bottom = 85.0
-text = "A"
+text = "Test"
+label_settings = ExtResource("2_jh43v")
 
 [node name="LabelP2" type="Label" parent="."]
 z_index = 1
@@ -309,6 +311,7 @@ offset_left = 45.0
 offset_top = 899.0
 offset_right = 271.0
 offset_bottom = 984.0
+label_settings = ExtResource("2_jh43v")
 
 [node name="LabelP3" type="Label" parent="."]
 z_index = 1
@@ -316,6 +319,7 @@ offset_left = 1558.0
 offset_top = 2.0
 offset_right = 1784.0
 offset_bottom = 87.0
+label_settings = ExtResource("2_jh43v")
 
 [node name="LabelP4" type="Label" parent="."]
 z_index = 1
@@ -323,6 +327,7 @@ offset_left = 1581.0
 offset_top = 920.0
 offset_right = 1807.0
 offset_bottom = 1005.0
+label_settings = ExtResource("2_jh43v")
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -10
