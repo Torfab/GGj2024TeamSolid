@@ -30,7 +30,7 @@ var last_direzione;
 
 @onready var stato = animationTree.get("parameters/playback")
 
-var currentWeapon
+var currentWeapon = null
 
 func _ready():
 	action_muovi_destra = "P"+str(nPlayer)+"_destra"
@@ -60,7 +60,9 @@ func _process(delta):
 		martelloHitSouth.disabled = true
 		martelloHitWest.disabled = true
 		martelloHitEast.disabled = true
-		
+	if(Input.is_action_pressed("P1_special") && currentWeapon != null):
+		currentWeapon = null
+		print("sparo una "+currentWeapon)
 		
 func _physics_process(_delta):
 	var direzione = Vector2(
