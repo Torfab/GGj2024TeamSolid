@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://ca70s32x80dsh"]
+
+[ext_resource type="Script" path="res://Pubblico.gd" id="1_ugobq"]
+[ext_resource type="Texture2D" uid="uid://68xqv2gorqe0" path="res://assets/player2.png" id="2_01hgt"]
+[ext_resource type="Texture2D" uid="uid://cblpmpckdlfb4" path="res://assets/player1.png" id="2_h3k7j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukyya"]
+atlas = ExtResource("2_h3k7j")
+region = Rect2(0, 195, 54, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4eqce"]
+atlas = ExtResource("2_01hgt")
+region = Rect2(60, 192, 60, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s8emi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukyya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4eqce")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="Pubblico" type="Node2D"]
+script = ExtResource("1_ugobq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(288, 143)
+sprite_frames = SubResource("SpriteFrames_s8emi")
+frame_progress = 1.0
