@@ -6,5 +6,7 @@
 script = ExtResource("1_4p0rv")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+offset = Vector2(0, -15)
 hframes = 2
 vframes = 2
