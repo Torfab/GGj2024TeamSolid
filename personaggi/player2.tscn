@@ -1,7 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://drna66qb87im4"]
+[gd_scene load_steps=28 format=3 uid="uid://ds1ljkqdcb5hr"]
 
-[ext_resource type="Texture2D" uid="uid://cblpmpckdlfb4" path="res://assets/player1.png" id="1_2hlal"]
-[ext_resource type="Script" path="res://personaggi/player1.gd" id="1_b1nk1"]
+[ext_resource type="Script" path="res://personaggi/player1.gd" id="1_tvory"]
+[ext_resource type="Texture2D" uid="uid://68xqv2gorqe0" path="res://assets/player2.png" id="2_88ref"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h6ho7"]
 size = Vector2(33, 26)
@@ -227,11 +227,11 @@ states/fermo/position = Vector2(358, 100)
 transitions = ["Start", "fermo", SubResource("AnimationNodeStateMachineTransition_oc821"), "fermo", "cammina", SubResource("AnimationNodeStateMachineTransition_8vf37"), "cammina", "fermo", SubResource("AnimationNodeStateMachineTransition_u75j4")]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_b1nk1")
+script = ExtResource("1_tvory")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, 0)
-texture = ExtResource("1_2hlal")
+texture = ExtResource("2_88ref")
 hframes = 2
 vframes = 4
 
@@ -251,4 +251,4 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_yrvyl")
 anim_player = NodePath("../AnimationPlayer")
 parameters/cammina/blend_position = Vector2(-0.168, 0.68326)
-parameters/fermo/blend_position = Vector2(-0.339827, -0.0873016)
+parameters/fermo/blend_position = Vector2(-0.0496, 0.392511)
