@@ -8,6 +8,8 @@ var playerSprites = [
 
 var theweapon = preload("res://Scene/weapon_in_testa.tscn")
 
+var currentWeaponIstance
+
 @export var velocita:float = 400
 @export var direzioneIniziale = Vector2(0, 1)
 
@@ -94,8 +96,13 @@ func setWeapon(weapon):
 	print("ho una " + str(weapon))
 
 func createWeapon(weapon):
+	if(currentWeaponIstance!=null):
+		currentWeaponIstance.queue_free()
 	var obj = theweapon.instantiate()
+	obj.set("currentWeapon", weapon)
 	add_child(obj)
+	currentWeaponIstance=obj
+	
 	print("sto creando ", weapon)
 
 func _on_area_collision_martello_body_entered(body):

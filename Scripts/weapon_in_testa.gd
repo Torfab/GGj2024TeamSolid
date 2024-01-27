@@ -9,9 +9,13 @@ var weaponSprites = [
 
 @onready var sprite= $Sprite
 
+var currentWeapon="None"
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	sprite.texture=weaponSprites[0]
+	
+	
+	if(currentWeapon!="None"):
+		sprite.texture=weaponSprites[global.weapons.find(currentWeapon)]
 	pass # Replace with function body.
 
 
