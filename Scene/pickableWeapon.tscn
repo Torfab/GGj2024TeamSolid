@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dgdct5tebjel7"]
 
-[ext_resource type="Script" path="res://livelli/pickableWeapon.gd" id="1_7wmh2"]
+[ext_resource type="Script" path="res://Scripts/pickableWeapon.gd" id="1_7wmh2"]
 [ext_resource type="Script" path="res://Scripts/PickableWeaponArea.gd" id="2_n2ygj"]
 [ext_resource type="Script" path="res://Scripts/CollisionShape2D.gd" id="3_mfw0h"]
 

@@ -63,8 +63,10 @@ func _process(delta):
 		martelloHitWest.disabled = true
 		martelloHitEast.disabled = true
 	if(Input.is_action_pressed("P1_special") && currentWeapon != null):
+		print(currentWeapon)
+		SignalBus.shoot_special.emit(nPlayer, last_direzione, currentWeapon)
 		currentWeapon = null
-		print("sparo una "+currentWeapon)
+		currentWeaponIstance.queue_free()
 		
 func _physics_process(_delta):
 	var direzione = Vector2(

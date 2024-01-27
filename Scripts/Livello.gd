@@ -1,8 +1,14 @@
 extends Node2D
 var giocatore = preload("res://Scene/player1.tscn")
+var armi = {
+	"Torta": preload("res://assets/Torta.png"),
+	"Banana": preload("res://assets/Banana.png"),
+	"Fiore": preload("res://assets/Fiore.png")
+}
 var positioni = [[150, 150], [150, 900], [1700, 150], [1700, 900]]
 
 func _ready():
+	SignalBus.connect("shoot_special", _shoot_special)
 	#global.giocatori = 1
 	for i in global.giocatori:
 		var player = giocatore.instantiate()
@@ -10,8 +16,16 @@ func _ready():
 		player.set("position", Vector2(positioni[i][0], positioni[i][1]))
 		add_child(player)
 
+func _shoot_special(player, direzione, weapon):
+	var arma = armi[weapon]
+	var istanza = arma.instantiate()
+	add_child(istanza) 
+	print("player "+str(player))
+	print("weapon "+str(weapon))
+
 func _process(delta):
 	$LabelP1.text = str(global.punteggio[0])
 	$LabelP2.text = str(global.punteggio[1])
 	$LabelP3.text = str(global.punteggio[2])
 	$LabelP4.text = str(global.punteggio[3])
+	
