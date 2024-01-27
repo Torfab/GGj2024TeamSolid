@@ -1,0 +1,254 @@
+[gd_scene load_steps=28 format=3 uid="uid://drna66qb87im4"]
+
+[ext_resource type="Texture2D" uid="uid://cblpmpckdlfb4" path="res://assets/player1.png" id="1_2hlal"]
+[ext_resource type="Script" path="res://personaggi/player1.gd" id="1_b1nk1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h6ho7"]
+size = Vector2(33, 26)
+
+[sub_resource type="Animation" id="Animation_4ex3j"]
+resource_name = "cammina_destra"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_50vk4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ty2jd"]
+resource_name = "cammina_sinistra"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_enw8v"]
+resource_name = "cammina_su"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_51eqx"]
+resource_name = "cammina_giù"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_vurva"]
+resource_name = "fermo_su"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_hbeui"]
+resource_name = "fermo_giù"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="Animation" id="Animation_412uv"]
+resource_name = "fermo_destra"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_ieqpn"]
+resource_name = "fermo_sinistra"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6mtk4"]
+_data = {
+"RESET": SubResource("Animation_50vk4"),
+"cammina_destra": SubResource("Animation_4ex3j"),
+"cammina_giù": SubResource("Animation_51eqx"),
+"cammina_sinistra": SubResource("Animation_ty2jd"),
+"cammina_su": SubResource("Animation_enw8v"),
+"fermo_destra": SubResource("Animation_412uv"),
+"fermo_giù": SubResource("Animation_hbeui"),
+"fermo_sinistra": SubResource("Animation_ieqpn"),
+"fermo_su": SubResource("Animation_vurva")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h6tc6"]
+animation = &"cammina_giù"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_eo1xw"]
+animation = &"cammina_su"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gugdc"]
+animation = &"cammina_sinistra"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2jbsl"]
+animation = &"cammina_destra"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_mhk5t"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_h6tc6")
+blend_point_0/pos = Vector2(0, 1.1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_eo1xw")
+blend_point_1/pos = Vector2(0, -1.1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_gugdc")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_2jbsl")
+blend_point_3/pos = Vector2(1, 0)
+min_space = Vector2(-1, -1.1)
+max_space = Vector2(1, 1.1)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_skfc7"]
+animation = &"fermo_giù"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1gsqs"]
+animation = &"fermo_su"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d3551"]
+animation = &"fermo_sinistra"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wrr76"]
+animation = &"fermo_destra"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_bvyjf"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_skfc7")
+blend_point_0/pos = Vector2(0, 1.1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_1gsqs")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_d3551")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_wrr76")
+blend_point_3/pos = Vector2(1, 0)
+min_space = Vector2(-1, -1.1)
+max_space = Vector2(1, 1.1)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_oc821"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8vf37"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_u75j4"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_yrvyl"]
+states/cammina/node = SubResource("AnimationNodeBlendSpace2D_mhk5t")
+states/cammina/position = Vector2(528, 100)
+states/fermo/node = SubResource("AnimationNodeBlendSpace2D_bvyjf")
+states/fermo/position = Vector2(358, 100)
+transitions = ["Start", "fermo", SubResource("AnimationNodeStateMachineTransition_oc821"), "fermo", "cammina", SubResource("AnimationNodeStateMachineTransition_8vf37"), "cammina", "fermo", SubResource("AnimationNodeStateMachineTransition_u75j4")]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_b1nk1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+texture = ExtResource("1_2hlal")
+hframes = 2
+vframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4.5, 20)
+shape = SubResource("RectangleShape2D_h6ho7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6mtk4")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6mtk4")
+}
+tree_root = SubResource("AnimationNodeStateMachine_yrvyl")
+anim_player = NodePath("../AnimationPlayer")
+parameters/cammina/blend_position = Vector2(-0.168, 0.68326)
+parameters/fermo/blend_position = Vector2(-0.0496, 0.392511)

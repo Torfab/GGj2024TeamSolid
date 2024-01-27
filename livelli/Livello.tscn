@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4cy183ggc7q0"]
+
+[ext_resource type="PackedScene" uid="uid://drna66qb87im4" path="res://personaggi/player1.tscn" id="1_dsvks"]
+
+[node name="Livello" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_dsvks")]
+position = Vector2(175, 197)
