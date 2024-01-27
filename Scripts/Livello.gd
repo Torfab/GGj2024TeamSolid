@@ -21,6 +21,7 @@ func _shoot_special(player, posizione, direzione, weapon):
 	var istanza = arma.instantiate()
 	istanza.position = posizione
 	istanza.direzione = direzione
+	istanza.shooter = player
 	add_child(istanza) 
 	print("player "+str(player))
 	print("weapon "+str(weapon))

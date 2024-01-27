@@ -41,7 +41,7 @@ func _ready():
 	action_muovi_giu = "P"+str(nPlayer)+"_giù"
 	action_attacca = "P"+str(nPlayer)+"_attacco"
 	sprite.texture = playerSprites[nPlayer-1]
-	
+	add_to_group("P"+str(nPlayer))
 	update_animation_parameters(direzioneIniziale)
 	
 func _process(delta):
