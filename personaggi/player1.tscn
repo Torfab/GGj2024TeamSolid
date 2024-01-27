@@ -237,10 +237,10 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [3, 2]
+"values": [3, 2, 3]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -249,10 +249,10 @@ tracks/1/path = NodePath(".:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(-18, -21), Vector2(-18, -22), Vector2(-25, -7)]
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-18, -21), Vector2(-18, -22), Vector2(-25, -7), Vector2(-18, -21)]
 }
 
 [sub_resource type="Animation" id="Animation_t0627"]
@@ -312,8 +312,8 @@ libraries = {
 }
 tree_root = SubResource("AnimationNodeStateMachine_yrvyl")
 anim_player = NodePath("../AnimationPlayer")
-parameters/cammina/blend_position = Vector2(-0.168, 0.68326)
-parameters/fermo/blend_position = Vector2(-0.339827, -0.0873016)
+parameters/cammina/blend_position = Vector2(-0.313853, -0.0291005)
+parameters/fermo/blend_position = Vector2(-0.0389611, 0.0873015)
 
 [node name="Martello" type="Sprite2D" parent="."]
 position = Vector2(-18, -21)
