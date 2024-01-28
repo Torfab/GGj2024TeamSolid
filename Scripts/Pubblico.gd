@@ -1,15 +1,31 @@
 extends Node2D
 
-var velocita_saltelli = 0.001
-var velocita_massima = 10
+@onready var timer =$Timer
+@onready var timer2 =$Timer2
+
+@onready var sprite=$AnimatedSprite2D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	var default_animation_speed = randi_range(1,5)
+	sprite.speed_scale = default_animation_speed
+	sprite.modulate = Color(randf(),randf(),randf(),1)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$AnimatedSprite2D.play('default')
-	if $AnimatedSprite2D.speed_scale < velocita_massima:
-		$AnimatedSprite2D.speed_scale += velocita_saltelli
+	sprite.play()
+
+
+
+func _on_timer_timeout():
+	print("inizio funzione")
+	sprite.stop()
+	sprite.play('laugh')
+	print("Guarda quanto faccio ridere")
+
+
+
+func _on_timer_2_timeout():
+	print("inizio funzione dos")
+	sprite.stop()
