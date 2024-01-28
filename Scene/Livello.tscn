@@ -308,16 +308,6 @@ bg_color = Color(0.890196, 0, 0.305882, 1)
 [node name="Livello" type="Node2D"]
 script = ExtResource("1_2epdf")
 
-[node name="LabelTimer" type="Label" parent="."]
-visible = false
-z_index = 1
-offset_left = 1656.0
-offset_right = 1882.0
-offset_bottom = 110.0
-text = "Test"
-label_settings = ExtResource("2_vslau")
-vertical_alignment = 1
-
 [node name="LabelP4" type="Label" parent="."]
 z_index = 1
 offset_left = 1200.0

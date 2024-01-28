@@ -538,5 +538,8 @@ tree_root = SubResource("AnimationNodeStateMachine_8161e")
 anim_player = NodePath("../AnimationPlayerMartello")
 parameters/attacca/blend_position = Vector2(-0.0030151, 1.08062)
 
+[node name="Timer2" type="Timer" parent="."]
+
 [connection signal="body_entered" from="AreaCollisionMartello" to="." method="_on_area_collision_martello_body_entered"]
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

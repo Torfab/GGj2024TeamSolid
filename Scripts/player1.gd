@@ -38,6 +38,7 @@ var last_direzione;
 @onready var statoMartello = animationTreeMartello.get("parameters/playback")
 
 @onready var timer = $Timer
+@onready var timerMartello = $Timer2
 
 var currentWeapon = null
 
@@ -136,4 +137,11 @@ func scivola(isScivola):
 
 func _on_area_collision_martello_body_entered(body):
 	if(body.is_in_group("Giocatore") && !body.is_in_group("P"+str(nPlayer))):
-		global.punteggio[nPlayer-1]+= global.sistemaPunti["Martello"] + randi_range(0,5)
+		if(status=="idle"):
+			status="martello"
+			global.punteggio[nPlayer-1]+= global.sistemaPunti["Martello"] + randi_range(0,5)
+			timerMartello.start(0.3)
+
+func _on_timer_2_timeout():
+	status="idle"
+	pass # Replace with function body.
