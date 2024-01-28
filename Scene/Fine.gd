@@ -13,5 +13,4 @@ func _init():
 	pass
 func _ready():
 	var winner = global.punteggio.find(global.punteggio.max())
-	print()
 	p1.set("texture", giocatori[winner])
