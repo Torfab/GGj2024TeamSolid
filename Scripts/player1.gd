@@ -26,7 +26,8 @@ var last_direzione;
 @export var action_special = ""
 	
 @onready var animationTree = $AnimationTree
-@onready var sprite = $Sprite2D
+@onready var animationTreeMartello = $AnimationTreeMartello
+@onready var sprite = $Player
 @onready var martelloHitNorth = $AreaCollisionMartello/CollisionNorth
 @onready var martelloHitSouth = $AreaCollisionMartello/CollisionSouth
 @onready var martelloHitWest = $AreaCollisionMartello/CollisionWest
@@ -34,6 +35,7 @@ var last_direzione;
 @onready var velocita = defaultVelocita
 
 @onready var stato = animationTree.get("parameters/playback")
+@onready var statoMartello = animationTreeMartello.get("parameters/playback")
 
 @onready var timer = $Timer
 
@@ -54,6 +56,8 @@ func _ready():
 	
 func _process(delta):
 	if Input.is_action_pressed(action_attacca):
+		update_animation_parameters_hammer(last_direzione)
+		statoMartello.travel("attacca")
 		if(last_direzione == Vector2(1,0)):
 			martelloHitEast.disabled = false
 		else:
@@ -98,7 +102,10 @@ func update_animation_parameters(direzione :Vector2):
 		animationTree.set("parameters/cammina/blend_position", direzione)
 		animationTree.set("parameters/fermo/blend_position", direzione)
 	setta_stato(direzione)
-		
+	
+func update_animation_parameters_hammer(direzione :Vector2):
+	animationTreeMartello.set("parameters/attacca/blend_position", direzione)
+				
 func setta_stato(direzione :Vector2):
 	if(direzione != Vector2.ZERO):
 		stato.travel("cammina")
@@ -128,5 +135,5 @@ func scivola(isScivola):
 	
 
 func _on_area_collision_martello_body_entered(body):
-	if(body.is_in_group("Giocatore")):
+	if(body.is_in_group("Giocatore") && !body.is_in_group("P"+str(nPlayer))):
 		global.punteggio[nPlayer-1]+= global.sistemaPunti["Martello"] + randi_range(0,5)

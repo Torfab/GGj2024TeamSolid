@@ -1,28 +1,53 @@
-[gd_scene load_steps=7 format=3 uid="uid://chouwqcfsr6o6"]
+[gd_scene load_steps=9 format=3 uid="uid://chouwqcfsr6o6"]
 
 [ext_resource type="Script" path="res://Scripts/Pubblico.gd" id="1_liicq"]
-[ext_resource type="Texture2D" uid="uid://cblpmpckdlfb4" path="res://assets/player1.png" id="2_jeioi"]
-[ext_resource type="Texture2D" uid="uid://68xqv2gorqe0" path="res://assets/player2.png" id="3_to6sj"]
+[ext_resource type="Texture2D" uid="uid://cy7m2cpb0fhk7" path="res://assets/Omino.png" id="4_6cbwe"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ukyya"]
-atlas = ExtResource("2_jeioi")
-region = Rect2(0, 195, 54, 65)
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhnby"]
+atlas = ExtResource("4_6cbwe")
+region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4eqce"]
-atlas = ExtResource("3_to6sj")
-region = Rect2(60, 192, 60, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_3l8it"]
+atlas = ExtResource("4_6cbwe")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3mcr"]
+atlas = ExtResource("4_6cbwe")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjank"]
+atlas = ExtResource("4_6cbwe")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8i0lc"]
+atlas = ExtResource("4_6cbwe")
+region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s8emi"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ukyya")
+"texture": SubResource("AtlasTexture_qhnby")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4eqce")
+"texture": SubResource("AtlasTexture_3l8it")
 }],
 "loop": false,
 "name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3mcr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjank")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8i0lc")
+}],
+"loop": true,
+"name": &"laugh",
 "speed": 1.0
 }]
 
@@ -31,5 +56,14 @@ script = ExtResource("1_liicq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(288, 143)
+scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_s8emi")
-frame_progress = 1.0
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Timer2" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
