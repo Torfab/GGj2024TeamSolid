@@ -10,11 +10,13 @@ var theweapon = preload("res://Scene/weapon_in_testa.tscn")
 
 var currentWeaponIstance
 
-@export var velocita:float = 400
+@export var defaultVelocita:float = 400
+@export var velocitaScivolata = 1200
 @export var direzioneIniziale = Vector2(0, 1)
 
 var nPlayer;
 var last_direzione;
+
 
 @export var action_muovi_destra = ""
 @export var action_muovi_sinistra = ""
@@ -29,7 +31,7 @@ var last_direzione;
 @onready var martelloHitSouth = $AreaCollisionMartello/CollisionSouth
 @onready var martelloHitWest = $AreaCollisionMartello/CollisionWest
 @onready var martelloHitEast = $AreaCollisionMartello/CollisionEast
-
+@onready var velocita = defaultVelocita
 
 @onready var stato = animationTree.get("parameters/playback")
 
@@ -75,6 +77,7 @@ func _process(delta):
 		
 func _physics_process(_delta):
 	if(status=="scivola"):
+		velocity = last_direzione*velocita #T'ammazzassi
 		move_and_slide()
 	else:
 		var direzione = Vector2(
@@ -118,8 +121,10 @@ func scivola(isScivola):
 	if(isScivola):
 		print("sto scivolando")
 		status="scivola"
-		timer.start(2)
+		velocita = velocitaScivolata;
+		timer.start(1)
 	else:
+		velocita = defaultVelocita
 		print("mi fermo di scivolare")
 		status="idle"
 	

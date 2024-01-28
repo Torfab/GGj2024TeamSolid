@@ -1,10 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmgb30068a2o8"]
+[gd_scene load_steps=23 format=3 uid="uid://dmgb30068a2o8"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerSelection.gd" id="1_75qu6"]
 [ext_resource type="Texture2D" uid="uid://xropb3assbq5" path="res://assets/introbg.jpeg" id="2_akq7o"]
 [ext_resource type="Texture2D" uid="uid://bftl4nxhoif0n" path="res://assets/2Players.png" id="3_o1lej"]
 [ext_resource type="Texture2D" uid="uid://do0rh1n2cvnlk" path="res://assets/3Players.png" id="4_v20y5"]
 [ext_resource type="Texture2D" uid="uid://eboge0tmj2t0" path="res://assets/4Players.png" id="5_8grac"]
+[ext_resource type="Texture2D" uid="uid://bamkxfkr01xod" path="res://assets/inputKeys/textbox.png" id="6_ujov6"]
+[ext_resource type="Texture2D" uid="uid://d0cgfcn01wi48" path="res://assets/P1_faccia.png" id="7_qdepo"]
+[ext_resource type="Texture2D" uid="uid://dmn0ucvf5dcyh" path="res://assets/inputKeys/wasd.png" id="8_u50ip"]
+[ext_resource type="Texture2D" uid="uid://cefcficj00k1a" path="res://assets/inputKeys/q.png" id="9_d81he"]
+[ext_resource type="Texture2D" uid="uid://dfw4clgydbvef" path="res://assets/inputKeys/1.png" id="10_yuj6w"]
+[ext_resource type="Texture2D" uid="uid://rl8pdph8y1hu" path="res://assets/P2_faccia.png" id="11_drjex"]
+[ext_resource type="Texture2D" uid="uid://b3puwm0bwno8q" path="res://assets/inputKeys/freccette.png" id="12_jcmey"]
+[ext_resource type="Texture2D" uid="uid://cx7rvtdhsulpb" path="res://assets/inputKeys/shift.png" id="13_dff7k"]
+[ext_resource type="Texture2D" uid="uid://h52jy7g53xq7" path="res://assets/inputKeys/quello.png" id="14_cobw8"]
+[ext_resource type="Texture2D" uid="uid://c33drf5qjr62h" path="res://assets/P3_faccia.png" id="15_rdd5v"]
+[ext_resource type="Texture2D" uid="uid://dq43ly60iwqjv" path="res://assets/inputKeys/yghj.png" id="16_0uk15"]
+[ext_resource type="Texture2D" uid="uid://cmayq85dlamf6" path="res://assets/inputKeys/t.png" id="17_rxf5e"]
+[ext_resource type="Texture2D" uid="uid://78co88sj2t17" path="res://assets/inputKeys/5.png" id="18_fk84o"]
+[ext_resource type="Texture2D" uid="uid://cy4om7aitviae" path="res://assets/P4_faccia.png" id="19_ymhsf"]
+[ext_resource type="Texture2D" uid="uid://cm5yprdfvebyf" path="res://assets/inputKeys/dpad.png" id="20_a5wdw"]
+[ext_resource type="Texture2D" uid="uid://bo5onw5on4k2l" path="res://assets/inputKeys/a.png" id="21_am24y"]
+[ext_resource type="Texture2D" uid="uid://87k23uvexyqv" path="res://assets/inputKeys/b.png" id="22_d0rv4"]
 
 [node name="PlayerSelection" type="Node2D"]
 script = ExtResource("1_75qu6")
@@ -15,31 +32,188 @@ scale = Vector2(1.07422, 1.05176)
 texture = ExtResource("2_akq7o")
 
 [node name="2 giocatori" type="TextureButton" parent="."]
-offset_left = 759.0
-offset_top = 658.0
-offset_right = 1171.0
-offset_bottom = 789.0
+offset_left = 625.0
+offset_top = 666.0
+offset_right = 1225.0
+offset_bottom = 797.0
 texture_normal = ExtResource("3_o1lej")
 texture_pressed = ExtResource("3_o1lej")
 texture_hover = ExtResource("3_o1lej")
 
 [node name="3 giocatori" type="TextureButton" parent="."]
-offset_left = 759.0
-offset_top = 792.0
-offset_right = 1171.0
-offset_bottom = 923.0
+offset_left = 625.0
+offset_top = 800.0
+offset_right = 1225.0
+offset_bottom = 931.0
 texture_normal = ExtResource("4_v20y5")
 texture_pressed = ExtResource("4_v20y5")
 texture_hover = ExtResource("4_v20y5")
 
 [node name="4 giocatori" type="TextureButton" parent="."]
-offset_left = 759.0
-offset_top = 920.0
-offset_right = 1171.0
-offset_bottom = 1051.0
+offset_left = 625.0
+offset_top = 928.0
+offset_right = 1225.0
+offset_bottom = 1059.0
 texture_normal = ExtResource("5_8grac")
 texture_pressed = ExtResource("5_8grac")
 texture_hover = ExtResource("5_8grac")
+
+[node name="Textbox" type="Sprite2D" parent="."]
+position = Vector2(962.399, 483.25)
+scale = Vector2(0.370443, 0.370443)
+texture = ExtResource("6_ujov6")
+
+[node name="P1_Guide" type="Container" parent="."]
+offset_left = 425.0
+offset_top = 429.0
+offset_right = 513.0
+offset_bottom = 514.0
+
+[node name="Faccia" type="Sprite2D" parent="P1_Guide"]
+position = Vector2(-18, -15)
+scale = Vector2(1.96875, 1.96875)
+texture = ExtResource("7_qdepo")
+
+[node name="Movements" type="Sprite2D" parent="P1_Guide"]
+position = Vector2(-7.99998, 123)
+scale = Vector2(2.43, 2.43)
+texture = ExtResource("8_u50ip")
+
+[node name="Attack" type="Sprite2D" parent="P1_Guide"]
+position = Vector2(-21.5, 38.5001)
+scale = Vector2(2.58333, 2.58333)
+texture = ExtResource("9_d81he")
+
+[node name="Special" type="Sprite2D" parent="P1_Guide"]
+position = Vector2(-21.75, 71.25)
+scale = Vector2(2.625, 2.625)
+texture = ExtResource("10_yuj6w")
+
+[node name="Attack_label" type="Label" parent="P1_Guide"]
+layout_mode = 2
+text = "Attacco"
+
+[node name="Special_label" type="Label" parent="P1_Guide"]
+layout_mode = 2
+text = "Special"
+
+[node name="Movements_label" type="Label" parent="P1_Guide"]
+layout_mode = 2
+text = "Movimenti"
+
+[node name="P2_Guide" type="Container" parent="."]
+offset_left = 762.0
+offset_top = 432.0
+offset_right = 850.0
+offset_bottom = 517.0
+
+[node name="Faccia" type="Sprite2D" parent="P2_Guide"]
+position = Vector2(-18, -15)
+scale = Vector2(1.96875, 1.96875)
+texture = ExtResource("11_drjex")
+
+[node name="Movements" type="Sprite2D" parent="P2_Guide"]
+position = Vector2(-20, 123)
+scale = Vector2(2.43, 2.43)
+texture = ExtResource("12_jcmey")
+
+[node name="Attack" type="Sprite2D" parent="P2_Guide"]
+position = Vector2(-21.5, 38.5001)
+scale = Vector2(2.58333, 2.58333)
+texture = ExtResource("13_dff7k")
+
+[node name="Special" type="Sprite2D" parent="P2_Guide"]
+position = Vector2(-21.75, 71.25)
+scale = Vector2(2.625, 2.625)
+texture = ExtResource("14_cobw8")
+
+[node name="Attack_label" type="Label" parent="P2_Guide"]
+layout_mode = 2
+text = "Attacco"
+
+[node name="Special_label" type="Label" parent="P2_Guide"]
+layout_mode = 2
+text = "Special"
+
+[node name="Movements_label" type="Label" parent="P2_Guide"]
+layout_mode = 2
+text = "Movimenti"
+
+[node name="P3_Guide" type="Container" parent="."]
+offset_left = 1170.0
+offset_top = 431.0
+offset_right = 1258.0
+offset_bottom = 516.0
+
+[node name="Faccia" type="Sprite2D" parent="P3_Guide"]
+position = Vector2(-18, -15)
+scale = Vector2(1.96875, 1.96875)
+texture = ExtResource("15_rdd5v")
+
+[node name="Movements" type="Sprite2D" parent="P3_Guide"]
+position = Vector2(-12, 123)
+scale = Vector2(2.43, 2.43)
+texture = ExtResource("16_0uk15")
+
+[node name="Attack" type="Sprite2D" parent="P3_Guide"]
+position = Vector2(-21.5, 38.5001)
+scale = Vector2(2.58333, 2.58333)
+texture = ExtResource("17_rxf5e")
+
+[node name="Special" type="Sprite2D" parent="P3_Guide"]
+position = Vector2(-21.75, 71.25)
+scale = Vector2(2.625, 2.625)
+texture = ExtResource("18_fk84o")
+
+[node name="Attack_label" type="Label" parent="P3_Guide"]
+layout_mode = 2
+text = "Attacco"
+
+[node name="Special_label" type="Label" parent="P3_Guide"]
+layout_mode = 2
+text = "Special"
+
+[node name="Movements_label" type="Label" parent="P3_Guide"]
+layout_mode = 2
+text = "Movimenti"
+
+[node name="P4_Guide" type="Container" parent="."]
+offset_left = 1476.0
+offset_top = 431.0
+offset_right = 1564.0
+offset_bottom = 516.0
+
+[node name="Faccia" type="Sprite2D" parent="P4_Guide"]
+position = Vector2(-18, -15)
+scale = Vector2(1.96875, 1.96875)
+texture = ExtResource("19_ymhsf")
+
+[node name="Movements" type="Sprite2D" parent="P4_Guide"]
+position = Vector2(-12, 123)
+scale = Vector2(2.43, 2.43)
+texture = ExtResource("20_a5wdw")
+
+[node name="Attack" type="Sprite2D" parent="P4_Guide"]
+position = Vector2(-21.5, 38.5001)
+scale = Vector2(2.58333, 2.58333)
+texture = ExtResource("21_am24y")
+
+[node name="Special" type="Sprite2D" parent="P4_Guide"]
+position = Vector2(-21.75, 71.25)
+scale = Vector2(2.625, 2.625)
+texture = ExtResource("22_d0rv4")
+
+[node name="Attack_label" type="Label" parent="P4_Guide"]
+layout_mode = 2
+text = "Attacco"
+
+[node name="Special_label" type="Label" parent="P4_Guide"]
+layout_mode = 2
+text = "Special"
+
+[node name="Movements_label" type="Label" parent="P4_Guide"]
+layout_mode = 2
+text = "Movimenti"
 
 [connection signal="pressed" from="2 giocatori" to="." method="_on_players_selected" binds= [2]]
 [connection signal="pressed" from="3 giocatori" to="." method="_on_players_selected" binds= [3]]
