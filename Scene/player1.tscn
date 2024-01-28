@@ -231,8 +231,9 @@ states/fermo/node = SubResource("AnimationNodeBlendSpace2D_bvyjf")
 states/fermo/position = Vector2(358, 100)
 transitions = ["Start", "fermo", SubResource("AnimationNodeStateMachineTransition_oc821"), "fermo", "cammina", SubResource("AnimationNodeStateMachineTransition_8vf37"), "cammina", "fermo", SubResource("AnimationNodeStateMachineTransition_u75j4")]
 
-[sub_resource type="Animation" id="Animation_v02d8"]
-resource_name = "MartelloIdle"
+[sub_resource type="Animation" id="Animation_y61uo"]
+resource_name = "MartelloAttackBasso"
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -240,25 +241,10 @@ tracks/0/path = NodePath("Martello:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [13]
-}
-
-[sub_resource type="Animation" id="Animation_k7pqs"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Martello:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [13]
+"values": [6, 7, 8]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -267,10 +253,66 @@ tracks/1/path = NodePath("Martello:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-31, -28)]
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(-1, -57), Vector2(-6, -57)]
+}
+
+[sub_resource type="Animation" id="Animation_1mfq2"]
+resource_name = "MartelloAttackDestra"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Martello:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Martello:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(-3.00002, -36), Vector2(29, -36), Vector2(29, -4)]
+}
+
+[sub_resource type="Animation" id="Animation_8doeo"]
+resource_name = "MartelloAttackDown"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Martello:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [9, 10, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Martello:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(-2.00002, -20), Vector2(-4.00002, 5), Vector2(-2.00002, 41)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -313,9 +355,8 @@ tracks/1/keys = {
 "values": [Vector2(-7.00002, -28), Vector2(-31, -28), Vector2(-55, -4)]
 }
 
-[sub_resource type="Animation" id="Animation_1mfq2"]
-resource_name = "MartelloAttackDestra"
-length = 0.3
+[sub_resource type="Animation" id="Animation_v02d8"]
+resource_name = "MartelloIdle"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -323,27 +364,14 @@ tracks/0/path = NodePath("Martello:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 1, 2]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Martello:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [Vector2(-3.00002, -36), Vector2(29, -36), Vector2(29, -4)]
+"values": [13]
 }
 
-[sub_resource type="Animation" id="Animation_y61uo"]
-resource_name = "MartelloAttackBasso"
-length = 0.3
+[sub_resource type="Animation" id="Animation_k7pqs"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -351,10 +379,10 @@ tracks/0/path = NodePath("Martello:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [6, 7, 8]
+"values": [13]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -363,38 +391,10 @@ tracks/1/path = NodePath("Martello:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Vector2(-1, -57), Vector2(-6, -57)]
-}
-
-[sub_resource type="Animation" id="Animation_8doeo"]
-resource_name = "MartelloAttackDown"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Martello:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [9, 10, 11]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Martello:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [Vector2(-2.00002, -20), Vector2(-4.00002, 5), Vector2(-2.00002, 41)]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-31, -28)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false

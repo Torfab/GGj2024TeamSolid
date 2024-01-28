@@ -3,7 +3,7 @@ var giocatore = preload("res://Scene/player1.tscn")
 var armi = {
 	"Torta": preload("res://Scene/Bullets/Torta.tscn"),
 	"Banana": preload("res://Scene/Bullets/Banana.tscn"),
-	"Fiore": preload("res://Scene/Bullets/Torta.tscn")
+	"Fiore": preload("res://Scene/Bullets/Fiore.tscn")
 }
 var positioni = [[350, 350], [350, 900], [1550, 350], [1550, 900]]
 
