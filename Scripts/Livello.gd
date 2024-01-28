@@ -35,9 +35,6 @@ func _process(delta):
 	$LabelP2.text = str(global.punteggio[1])
 	$LabelP3.text = str(global.punteggio[2])
 	$LabelP4.text = str(global.punteggio[3])
-	var minuti = "0"+str(floori($Timer2.get_time_left() / 60))
-	var secondi = "0"+str(roundi($Timer2.get_time_left()) % 60)
-	$LabelTimer.text = minuti.right(2)+":"+secondi.right(2)
 	
 
 
