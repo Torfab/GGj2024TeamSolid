@@ -2,7 +2,7 @@ extends Node2D
 var giocatore = preload("res://Scene/player1.tscn")
 var armi = {
 	"Torta": preload("res://Scene/Bullets/Torta.tscn"),
-	"Banana": preload("res://Scene/Bullets/Torta.tscn"),
+	"Banana": preload("res://Scene/Bullets/Banana.tscn"),
 	"Fiore": preload("res://Scene/Bullets/Torta.tscn")
 }
 var positioni = [[150, 150], [150, 900], [1700, 150], [1700, 900]]

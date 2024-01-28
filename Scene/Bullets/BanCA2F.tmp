@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://lbl0qgeerh4f"]
+
+[ext_resource type="Script" path="res://Scene/Banana.gd" id="1_agrs6"]
+[ext_resource type="Script" path="res://Scene/Bullets/Area2D.gd" id="2_8p1o8"]
+[ext_resource type="Texture2D" uid="uid://dqf50gabrx1x0" path="res://assets/Banananderra.png" id="2_slbka"]
+[ext_resource type="Script" path="res://Scene/Bullets/Timer.gd" id="4_t2uto"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6g3qy"]
+radius = 14.8797
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2(1.15, 1.15)
+script = ExtResource("1_agrs6")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(1.15, 1.15)
+script = ExtResource("2_8p1o8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+scale = Vector2(1.15, 1.15)
+texture = ExtResource("2_slbka")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1.15, 1.15)
+shape = SubResource("CircleShape2D_6g3qy")
+disabled = true
+
+[node name="Timer" type="Timer" parent="Area2D"]
+autostart = true
+script = ExtResource("4_t2uto")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Area2D/Timer" to="Area2D/Timer" method="_on_timeout"]
