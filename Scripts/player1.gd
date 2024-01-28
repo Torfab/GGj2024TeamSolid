@@ -5,7 +5,7 @@ var playerSprites = [
 	preload("res://assets/player3.png"),
 	preload("res://assets/player4.png")
 ]
-
+var suonoMartello = preload("res://assets/Hammer.mp3")
 var theweapon = preload("res://Scene/weapon_in_testa.tscn")
 
 var currentWeaponIstance
@@ -54,9 +54,12 @@ func _ready():
 	sprite.texture = playerSprites[nPlayer-1]
 	add_to_group("P"+str(nPlayer))
 	update_animation_parameters(direzioneIniziale)
+	last_direzione = direzioneIniziale
 	
 func _process(delta):
 	if Input.is_action_pressed(action_attacca):
+		var suono = $SuonoMartello
+		suono.play()
 		update_animation_parameters_hammer(last_direzione)
 		statoMartello.travel("attacca")
 		if(last_direzione == Vector2(1,0)):
@@ -151,6 +154,7 @@ func _on_area_collision_martello_body_entered(body):
 	if(body.is_in_group("Giocatore") && !body.is_in_group("P"+str(nPlayer))):
 		if(status=="idle"):
 			status="martello"
+			
 			global.punteggio[nPlayer-1]+= global.sistemaPunti["Martello"] + randi_range(0,5)
 			timerMartello.start(0.3)
 
