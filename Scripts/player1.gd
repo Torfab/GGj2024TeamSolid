@@ -119,13 +119,11 @@ func createWeapon(weapon):
 
 func scivola(isScivola):
 	if(isScivola):
-		print("sto scivolando")
 		status="scivola"
 		velocita = velocitaScivolata;
 		timer.start(1)
 	else:
 		velocita = defaultVelocita
-		print("mi fermo di scivolare")
 		status="idle"
 	
 
