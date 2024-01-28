@@ -89,18 +89,6 @@ position = Vector2(-21.75, 71.25)
 scale = Vector2(2.625, 2.625)
 texture = ExtResource("10_yuj6w")
 
-[node name="Attack_label" type="Label" parent="P1_Guide"]
-layout_mode = 2
-text = "Attacco"
-
-[node name="Special_label" type="Label" parent="P1_Guide"]
-layout_mode = 2
-text = "Special"
-
-[node name="Movements_label" type="Label" parent="P1_Guide"]
-layout_mode = 2
-text = "Movimenti"
-
 [node name="P2_Guide" type="Container" parent="."]
 offset_left = 762.0
 offset_top = 432.0
@@ -118,7 +106,7 @@ scale = Vector2(2.43, 2.43)
 texture = ExtResource("12_jcmey")
 
 [node name="Attack" type="Sprite2D" parent="P2_Guide"]
-position = Vector2(-21.5, 38.5001)
+position = Vector2(-31.5, 38.5001)
 scale = Vector2(2.58333, 2.58333)
 texture = ExtResource("13_dff7k")
 
@@ -126,18 +114,6 @@ texture = ExtResource("13_dff7k")
 position = Vector2(-21.75, 71.25)
 scale = Vector2(2.625, 2.625)
 texture = ExtResource("14_cobw8")
-
-[node name="Attack_label" type="Label" parent="P2_Guide"]
-layout_mode = 2
-text = "Attacco"
-
-[node name="Special_label" type="Label" parent="P2_Guide"]
-layout_mode = 2
-text = "Special"
-
-[node name="Movements_label" type="Label" parent="P2_Guide"]
-layout_mode = 2
-text = "Movimenti"
 
 [node name="P3_Guide" type="Container" parent="."]
 offset_left = 1170.0
@@ -165,18 +141,6 @@ position = Vector2(-21.75, 71.25)
 scale = Vector2(2.625, 2.625)
 texture = ExtResource("18_fk84o")
 
-[node name="Attack_label" type="Label" parent="P3_Guide"]
-layout_mode = 2
-text = "Attacco"
-
-[node name="Special_label" type="Label" parent="P3_Guide"]
-layout_mode = 2
-text = "Special"
-
-[node name="Movements_label" type="Label" parent="P3_Guide"]
-layout_mode = 2
-text = "Movimenti"
-
 [node name="P4_Guide" type="Container" parent="."]
 offset_left = 1476.0
 offset_top = 431.0
@@ -203,16 +167,88 @@ position = Vector2(-21.75, 71.25)
 scale = Vector2(2.625, 2.625)
 texture = ExtResource("22_d0rv4")
 
-[node name="Attack_label" type="Label" parent="P4_Guide"]
-layout_mode = 2
+[node name="P4_Attack_label" type="Label" parent="."]
+offset_left = 1482.0
+offset_top = 459.0
+offset_right = 1541.0
+offset_bottom = 482.0
 text = "Attacco"
 
-[node name="Special_label" type="Label" parent="P4_Guide"]
-layout_mode = 2
+[node name="P4_Special_label" type="Label" parent="."]
+offset_left = 1483.0
+offset_top = 492.0
+offset_right = 1538.0
+offset_bottom = 515.0
 text = "Special"
 
-[node name="Movements_label" type="Label" parent="P4_Guide"]
-layout_mode = 2
+[node name="P4_Movements_label" type="Label" parent="."]
+offset_left = 1482.0
+offset_top = 521.0
+offset_right = 1566.0
+offset_bottom = 544.0
+text = "Movimenti"
+
+[node name="P3_Attack_label" type="Label" parent="."]
+offset_left = 1178.0
+offset_top = 460.0
+offset_right = 1237.0
+offset_bottom = 483.0
+text = "Attacco"
+
+[node name="P3_Special_label" type="Label" parent="."]
+offset_left = 1178.0
+offset_top = 494.0
+offset_right = 1233.0
+offset_bottom = 517.0
+text = "Special"
+
+[node name="P3_Movements_label" type="Label" parent="."]
+offset_left = 1177.0
+offset_top = 528.0
+offset_right = 1261.0
+offset_bottom = 551.0
+text = "Movimenti"
+
+[node name="P2_Attack_label" type="Label" parent="."]
+offset_left = 768.0
+offset_top = 460.0
+offset_right = 827.0
+offset_bottom = 483.0
+text = "Attacco"
+
+[node name="P2_Special_label" type="Label" parent="."]
+offset_left = 766.0
+offset_top = 494.0
+offset_right = 821.0
+offset_bottom = 517.0
+text = "Special"
+
+[node name="P2_Movements_label" type="Label" parent="."]
+offset_left = 766.0
+offset_top = 529.0
+offset_right = 850.0
+offset_bottom = 552.0
+text = "Movimenti"
+
+[node name="P1_Attack_label" type="Label" parent="."]
+offset_left = 432.0
+offset_top = 454.0
+offset_right = 491.0
+offset_bottom = 477.0
+text = "Attacco"
+
+[node name="P1_Special_label" type="Label" parent="."]
+offset_left = 434.0
+offset_top = 489.0
+offset_right = 489.0
+offset_bottom = 512.0
+text = "Special"
+
+[node name="P1_Movements_label" type="Label" parent="."]
+offset_left = 435.0
+offset_top = 523.0
+offset_right = 519.0
+offset_bottom = 546.0
 text = "Movimenti"
 
 [connection signal="pressed" from="2 giocatori" to="." method="_on_players_selected" binds= [2]]

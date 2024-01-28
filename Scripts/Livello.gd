@@ -5,7 +5,7 @@ var armi = {
 	"Banana": preload("res://Scene/Bullets/Banana.tscn"),
 	"Fiore": preload("res://Scene/Bullets/Torta.tscn")
 }
-var positioni = [[150, 150], [150, 900], [1700, 150], [1700, 900]]
+var positioni = [[350, 350], [350, 900], [1550, 350], [1550, 900]]
 
 
 func _ready():
