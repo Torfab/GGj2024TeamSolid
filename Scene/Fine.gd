@@ -4,10 +4,10 @@ extends Node2D
 @onready var treno=$AnimationPlayer
 
 @onready var giocatori = [
-	preload("res://assets/P1_faccia.png"),
-	preload("res://assets/P2_faccia.png"),
-	preload("res://assets/P3_faccia.png"),
-	preload("res://assets/P4_faccia.png")
+	preload("res://assets/player1.png"),
+	preload("res://assets/player2.png"),
+	preload("res://assets/player3.png"),
+	preload("res://assets/player4.png")
 ]
 
 func _init():
