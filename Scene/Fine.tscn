@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bti2pv6i1c0x0"]
+[gd_scene load_steps=9 format=3 uid="uid://bti2pv6i1c0x0"]
 
 [ext_resource type="Script" path="res://Scene/Fine.gd" id="1_frm1y"]
 [ext_resource type="Texture2D" uid="uid://u05c7jwasofe" path="res://assets/fine.png" id="2_gugrb"]
@@ -12,6 +12,7 @@ outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_b1o3a"]
 resource_name = "idle"
+length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -19,18 +20,34 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 10.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 5, 10.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(5899, 372), Vector2(-2000, 372)]
+"values": [Vector2(4416, 982), Vector2(-1000, 993), Vector2(-2000, 372)]
+}
+
+[sub_resource type="Animation" id="Animation_wp60b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3520, 982)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_imhm0"]
 _data = {
+"RESET": SubResource("Animation_wp60b"),
 "idle": SubResource("Animation_b1o3a")
 }
 
-[node name="Livello" type="Node2D"]
+[node name="Livello2" type="Node2D"]
 script = ExtResource("1_frm1y")
 
 [node name="Fine" type="Sprite2D" parent="."]
@@ -52,11 +69,13 @@ text = "Ha fatto ridere di più"
 label_settings = SubResource("LabelSettings_3pyod")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(5899, 372)
+position = Vector2(3520, 982)
 scale = Vector2(2, 2)
 texture = ExtResource("4_vfspp")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite2D")
+callback_mode_method = 1
 libraries = {
 "": SubResource("AnimationLibrary_imhm0")
 }
