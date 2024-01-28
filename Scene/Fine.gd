@@ -11,3 +11,4 @@ func _init():
 func _ready():
 	var winner = global.punteggio.find(global.punteggio.max())
 	$P1.set("Texture", giocatori[winner])
+	print(winner)
