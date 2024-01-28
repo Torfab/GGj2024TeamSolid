@@ -1,7 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://drna66qb87im4"]
+[gd_scene load_steps=30 format=3 uid="uid://drna66qb87im4"]
 
 [ext_resource type="Script" path="res://Scripts/player1.gd" id="1_kucxw"]
 [ext_resource type="Texture2D" uid="uid://cblpmpckdlfb4" path="res://assets/player1.png" id="2_tcrhp"]
+[ext_resource type="Script" path="res://Scene/TimerPlayer.gd" id="3_5ckfs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78f47"]
 size = Vector2(33, 47)
@@ -278,4 +279,8 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/cammina/blend_position = Vector2(-0.313853, -0.0291005)
 parameters/fermo/blend_position = Vector2(-0.0389611, 0.0873015)
 
+[node name="Timer" type="Timer" parent="."]
+script = ExtResource("3_5ckfs")
+
 [connection signal="body_entered" from="AreaCollisionMartello" to="." method="_on_area_collision_martello_body_entered"]
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

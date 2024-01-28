@@ -33,7 +33,11 @@ var last_direzione;
 
 @onready var stato = animationTree.get("parameters/playback")
 
+@onready var timer = $Timer
+
 var currentWeapon = null
+
+var status = "idle"
 
 func _ready():
 	action_muovi_destra = "P"+str(nPlayer)+"_destra"
@@ -70,18 +74,21 @@ func _process(delta):
 		currentWeaponIstance.queue_free()
 		
 func _physics_process(_delta):
-	var direzione = Vector2(
-		Input.get_action_strength(action_muovi_destra) - Input.get_action_strength(action_muovi_sinistra),
-		Input.get_action_strength(action_muovi_giu) - Input.get_action_strength(action_muovi_su)
-	)
-	if(direzione != Vector2.ZERO):
-		last_direzione = direzione
-	update_animation_parameters(direzione)
-	if(direzione != Vector2.ZERO):
-		direzione = direzione.normalized()
-
-	velocity = direzione*velocita #Si deve chiamare velocity
-	move_and_slide()
+	if(status=="scivola"):
+		move_and_slide()
+	else:
+		var direzione = Vector2(
+			Input.get_action_strength(action_muovi_destra) - Input.get_action_strength(action_muovi_sinistra),
+			Input.get_action_strength(action_muovi_giu) - Input.get_action_strength(action_muovi_su)
+		)
+		if(direzione != Vector2.ZERO):
+			last_direzione = direzione
+		update_animation_parameters(direzione)
+		if(direzione != Vector2.ZERO):
+			direzione = direzione.normalized()
+		
+		velocity = direzione*velocita #Si deve chiamare velocity
+		move_and_slide()
 
 func update_animation_parameters(direzione :Vector2):
 	if(direzione != Vector2.ZERO):
@@ -106,6 +113,16 @@ func createWeapon(weapon):
 	obj.set("currentWeapon", weapon)
 	add_child(obj)
 	currentWeaponIstance=obj
+
+func scivola(isScivola):
+	if(isScivola):
+		print("sto scivolando")
+		status="scivola"
+		timer.start(2)
+	else:
+		print("mi fermo di scivolare")
+		status="idle"
+	
 
 func _on_area_collision_martello_body_entered(body):
 	if(body.is_in_group("Giocatore")):
