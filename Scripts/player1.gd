@@ -76,9 +76,21 @@ func _process(delta):
 		martelloHitWest.disabled = true
 		martelloHitEast.disabled = true
 	if(Input.is_action_pressed(action_special) && currentWeapon != null):
-		SignalBus.shoot_special.emit(nPlayer, position, last_direzione, currentWeapon)
+		if(currentWeapon == "Fiore"):
+			$TimerFiore.theStart = true
+			$TimerFiore.start(0.1)
+		else:
+			shoot_special()
 		currentWeapon = null
-		currentWeaponIstance.queue_free()
+		currentWeaponIstance.queue_free()	
+
+func spawnAcqua():
+	SignalBus.shoot_special.emit(nPlayer, position, last_direzione, "Fiore")
+
+func shoot_special():
+	SignalBus.shoot_special.emit(nPlayer, position, last_direzione, currentWeapon)
+	currentWeapon = null
+	currentWeaponIstance.queue_free()		
 		
 func _physics_process(_delta):
 	if(status=="scivola"):

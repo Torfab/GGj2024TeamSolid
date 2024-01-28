@@ -36,8 +36,6 @@ func _process(delta):
 	$LabelP3.text = str(global.punteggio[2])
 	$LabelP4.text = str(global.punteggio[3])
 	
-
-
 func _on_timer_2_timeout():
 	get_tree().change_scene_to_file("res://Scene/Fine.tscn")
 	pass # Replace with function body.

@@ -1,9 +1,10 @@
-[gd_scene load_steps=48 format=3 uid="uid://drna66qb87im4"]
+[gd_scene load_steps=49 format=3 uid="uid://drna66qb87im4"]
 
 [ext_resource type="Script" path="res://Scripts/player1.gd" id="1_kucxw"]
 [ext_resource type="Texture2D" uid="uid://dymy11st5t7tt" path="res://assets/Martello.png" id="2_avdb8"]
 [ext_resource type="Texture2D" uid="uid://cblpmpckdlfb4" path="res://assets/player1.png" id="2_tcrhp"]
 [ext_resource type="Script" path="res://Scene/TimerPlayer.gd" id="3_5ckfs"]
+[ext_resource type="Script" path="res://Scene/TimerFioreScript.gd" id="5_ibig1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78f47"]
 size = Vector2(33, 47)
@@ -540,6 +541,10 @@ parameters/attacca/blend_position = Vector2(-0.0030151, 1.08062)
 
 [node name="Timer2" type="Timer" parent="."]
 
+[node name="TimerFiore" type="Timer" parent="."]
+script = ExtResource("5_ibig1")
+
 [connection signal="body_entered" from="AreaCollisionMartello" to="." method="_on_area_collision_martello_body_entered"]
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="TimerFiore" to="TimerFiore" method="_on_timeout"]
