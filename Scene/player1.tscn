@@ -280,6 +280,7 @@ parameters/cammina/blend_position = Vector2(-0.313853, -0.0291005)
 parameters/fermo/blend_position = Vector2(-0.0389611, 0.0873015)
 
 [node name="Timer" type="Timer" parent="."]
+one_shot = true
 script = ExtResource("3_5ckfs")
 
 [connection signal="body_entered" from="AreaCollisionMartello" to="." method="_on_area_collision_martello_body_entered"]
